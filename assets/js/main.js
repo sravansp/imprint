@@ -14,8 +14,32 @@ ScrollTrigger.create({
   start: "top top",
   end: "bottom bottom",
   pin: ".section_2_left",
-  scrub:0.5
 });
+
+var owl = $('#review_carousel');
+    owl.owlCarousel({
+        items: 2,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        smartSpeed: 1500,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true
+    });
+    $('.play').on('click', function () {
+        owl.trigger('play.owl.autoplay', [1000])
+    })
+    $('.stop').on('click', function () {
+        owl.trigger('stop.owl.autoplay')
+    })
+
+
+
+
+
+
+
+
 // Image Frame sequence Animation
 const html = document.documentElement;
 const canvas = document.getElementById("hero-lightpass");
@@ -135,6 +159,8 @@ var swiper2 = new Swiper ('.swiper2', {
   
   
 }
+
+
 
 
 
