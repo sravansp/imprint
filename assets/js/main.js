@@ -4,52 +4,34 @@ $(function () {
 gsap.registerPlugin(
   ScrollTrigger
 );
-gsap.to(".section_2_right",{
-  ScrollTrigger:{
-    scrub:0.5,
-  }
-})
-ScrollTrigger.create({
-  trigger: ".section_2_main",
-  start: "top top",
-  end: "bottom bottom",
-  pin: ".section_2_left",
+
+// GSAP Animation
+const tl = gsap.timeline();
+
+// Pinned element animation
+tl.to('.section_2_left', {
+  y: '-50%',
+  duration: 1
 });
+
+// Scroll trigger for content animation
+ScrollTrigger.create({
+  trigger: '.section_2_main',
+  start: 'top top',
+  end: 'bottom bottom',
+  animation: tl,
+  scrub: true,
+  pin: '.section_2_left',
+});
+
+
 // smooth scrolling container
-// smoothScroll(".box");
-
-// // pin each box for 300px when they hit the top
-// gsap.utils.toArray("#hero-lightpass").forEach(box => {
-//   ScrollTrigger.create({
-//     trigger: box,
-//     pin: true,
-//     start: "top top",
-//     end: "+=300"
-//   });
-// });
-
-var owl = $('#review_carousel');
-    owl.owlCarousel({
-        items: 2,
-        loop: true,
-        margin: 200,
-        autoplay: true,
-        smartSpeed: 1500,
-        autoplayTimeout: 4000,
-        autoplayHoverPause: true
-    });
-    $('.play').on('click', function () {
-        owl.trigger('play.owl.autoplay', [1000])
-    })
-    $('.stop').on('click', function () {
-        owl.trigger('stop.owl.autoplay')
-    })
-
-
-
-
-
-
+const smoother = ScrollSmoother.create({
+  smooth: 1,
+  effects: true,
+  // normalizeScroll: true,
+  smoothTouch: 0.1,
+});
 
 
 // Image Frame sequence Animation
@@ -57,19 +39,19 @@ const html = document.documentElement;
 const canvas = document.getElementById("hero-lightpass");
 const context = canvas.getContext("2d");
 
-const frameCount = 437;
+const frameCount = 392;
 const currentFrame = (index) =>
-  `./assets/images/seq_cube/3dcube${index.toString().padStart(3, "0")}.png`;
+  `./assets/images/cubeseq/32cube%20(${index.toString().padStart(1, "0")}).png`;
 
 const preloadImages = () => {
-  for (let i = 46; i < frameCount; i++) {
+  for (let i = 1; i < frameCount; i++) {
     const img = new Image();
     img.src = currentFrame(i);
   }
 };
 
 const img = new Image();
-img.src = currentFrame(46);
+img.src = currentFrame(1);
 canvas.width = 1308;
 canvas.height = 1080;
 img.onload = function () {
@@ -96,38 +78,35 @@ window.addEventListener("scroll", () => {
 preloadImages();
 
 
+window.onload = function () {
 
-
-
-window.onload = function() {
-  
-  function setCurrentSlide(ele,index){
+  function setCurrentSlide(ele, index) {
     $(".swiper1 .swiper-slide").removeClass("selected");
     ele.addClass("selected");
     //swiper1.initialSlide=index;
   }
-  
+
   var swiper1 = new Swiper('.swiper1', {
-        slidesPerView: 5,
-        paginationClickable: true,
-        spaceBetween: 10,
-        freeMode: true,
-        loop: false,
-        onTab:function(swiper){
-          var n = swiper1.clickedIndex;
-        }
-    });
-  swiper1.slides.each(function(index,val){
-    var ele=$(this);
-    ele.on("click",function(){
-      setCurrentSlide(ele,index);
+    slidesPerView: 5,
+    paginationClickable: true,
+    spaceBetween: 10,
+    freeMode: true,
+    loop: false,
+    onTab: function (swiper) {
+      var n = swiper1.clickedIndex;
+    }
+  });
+  swiper1.slides.each(function (index, val) {
+    var ele = $(this);
+    ele.on("click", function () {
+      setCurrentSlide(ele, index);
       swiper2.slideTo(index, 500, false);
       //mySwiper.initialSlide=index;
     });
   });
-  
-  
-var swiper2 = new Swiper ('.swiper2', {
+
+
+  var swiper2 = new Swiper('.swiper2', {
     direction: 'horizontal',
     // slidesPerView: 1,
     spaceBetween: 50,
@@ -140,55 +119,137 @@ var swiper2 = new Swiper ('.swiper2', {
     mousewheel: {
       releaseOnEdges: true,
     },
-    onSlideChangeEnd: function(swiper){
-    
-      var n=swiper.activeIndex;
-      setCurrentSlide($(".swiper1 .swiper-slide").eq(n),n);
+    onSlideChangeEnd: function (swiper) {
+
+      var n = swiper.activeIndex;
+      setCurrentSlide($(".swiper1 .swiper-slide").eq(n), n);
       swiper1.slideTo(n, 500, false);
     }
   });
 
-  var Data="brochure, package, standee, books, more";
-	$(".start").on('click',function(){
-		$(".show").html('');
-		var flag = true,j = 0;
-			//if(flag){
-				//flag = false;
-				(function Data(){
-					if(j < Data.length){
-						setTimeout(function(){
-							$(".show").html(Data.slice(0,j++));
-							Data();
-						},200);
-					}
-					else{
-						$(".show").html(Data);
-						flag = true;
-					}
-				})();
-			//}
-	});
-  
-  
+  var Data = "brochure, package, standee, books, more";
+  $(".start").on('click', function () {
+    $(".show").html('');
+    var flag = true,
+      j = 0;
+    //if(flag){
+    //flag = false;
+    (function Data() {
+      if (j < Data.length) {
+        setTimeout(function () {
+          $(".show").html(Data.slice(0, j++));
+          Data();
+        }, 200);
+      } else {
+        $(".show").html(Data);
+        flag = true;
+      }
+    })();
+    //}
+  });
+
+
 }
 
 
 
 
+var owl = $('#review_carousel');
+owl.owlCarousel({
+  items: 2,
+  loop: true,
+  margin: 200,
+  autoplay: true,
+  smartSpeed: 1500,
+  autoplayTimeout: 4000,
+  autoplayHoverPause: true
+});
+$('.play').on('click', function () {
+  owl.trigger('play.owl.autoplay', [1000])
+})
+$('.stop').on('click', function () {
+  owl.trigger('stop.owl.autoplay')
+})
 
 
 
 
+gsap.set('.cursor', {
+  xPercent: -50,
+  yPercent: -50
+})
 
+let cursor = document.querySelector('.cursor')
+let hand = document.querySelector('.hand')
+let title = document.querySelector('.header_title')
 
+let mouseX;
+let mouseY;
 
+window.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 
+  gsap.to(cursor, 0.5, {
+    x: mouseX,
+    y: mouseY
+  })
+})
 
+title.addEventListener('mouseenter', () => {
+  gsap.to(hand, 1, {
+    scale: 1,
+    opacity: 1,
+    top: '-75px',
+    left: '-75px',
+    rotate: 0,
+    ease: Elastic.easeOut.config(1, 0.3)
+  })
+})
 
+title.addEventListener('mousemove', () => {
+  gsap.to(hand, 1, {
+    x: mouseX,
+    y: mouseY
+  })
+})
 
+title.addEventListener('mouseleave', () => {
+  gsap.to(hand, 0.2, {
+    scale: 0,
+    opacity: 0,
+    top: '10',
+    left: '40',
+    rotate: 45,
+  })
+})
 
+$(document).ready(function () {
 
+  $(".hover_layer-sm").hover(function () {
 
+    $(".cursor").addClass("highlight_title-sm");
+  }, function () {
+
+    $(".cursor").removeClass("highlight_title-sm");
+  });
+
+  $(".hover_layer-md").hover(function () {
+
+    $(".cursor").addClass("highlight_title-md");
+  }, function () {
+
+    $(".cursor").removeClass("highlight_title-md");
+  });
+
+  $(".hover_layer").hover(function () {
+
+    $(".cursor").addClass("highlight_title");
+  }, function () {
+
+    $(".cursor").removeClass("highlight_title");
+  });
+});
 
 
 
@@ -222,12 +283,12 @@ function ScrollRevealaAm() {
     delay: 600,
     duration: 2000,
     origin: "right",
-    reset:true
+    reset: true
   });
 
   sr.reveal(".tab_slider", {
     origin: "right",
     interval: 100,
-    reset:true
+    reset: true
   });
 }
