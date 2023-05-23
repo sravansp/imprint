@@ -3,10 +3,10 @@ gsap.registerPlugin(ScrollTrigger);
 // gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollSmoother);
 
-console.clear();
+// console.clear();
 
-select = e => document.querySelector(e);
-selectAll = e => document.querySelectorAll(e);
+// select = e => document.querySelector(e);
+// selectAll = e => document.querySelectorAll(e);
 
 // const stage = select('.stage');
 // const slides = selectAll(".slide");
@@ -291,29 +291,29 @@ const smoother = ScrollSmoother.create({
 //     })
 // }
 
-function initParallax() {
+// function initParallax() {
     
-    slides.forEach((slide, i) => {
-        let imageWrappers = slide.querySelectorAll('.section');
+//     slides.forEach((slide, i) => {
+//         let imageWrappers = slide.querySelectorAll('.section');
         
-        gsap.fromTo(imageWrappers, {
-            y: "-30vh"
-        },{
-            y: "30vh",
-            scrollTrigger: {
-                trigger: slide,
-                scrub: true,
-                start: "top bottom", // position of trigger meets the scroller position
-                snap: {
-                    snapTo: 0.5, // 0.5 'cause the scroll animation range is 200vh for parallax effect
-                    duration: 1,
-                    ease: 'power4.inOut'
-                }
-            },
-            ease: 'none'
-        })
-    });
-}
+//         gsap.fromTo(imageWrappers, {
+//             y: "-30vh"
+//         },{
+//             y: "30vh",
+//             scrollTrigger: {
+//                 trigger: slide,
+//                 scrub: true,
+//                 start: "top bottom", // position of trigger meets the scroller position
+//                 snap: {
+//                     snapTo: 0.5, // 0.5 'cause the scroll animation range is 200vh for parallax effect
+//                     duration: 1,
+//                     ease: 'power4.inOut'
+//                 }
+//             },
+//             ease: 'none'
+//         })
+//     });
+// }
 
 // function scrollTop() {
 //     gsap.to(window, {

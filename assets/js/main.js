@@ -15,12 +15,24 @@ ScrollTrigger.create({
   end: "bottom bottom",
   pin: ".section_2_left",
 });
+// smooth scrolling container
+// smoothScroll(".box");
+
+// // pin each box for 300px when they hit the top
+// gsap.utils.toArray("#hero-lightpass").forEach(box => {
+//   ScrollTrigger.create({
+//     trigger: box,
+//     pin: true,
+//     start: "top top",
+//     end: "+=300"
+//   });
+// });
 
 var owl = $('#review_carousel');
     owl.owlCarousel({
         items: 2,
         loop: true,
-        margin: 10,
+        margin: 200,
         autoplay: true,
         smartSpeed: 1500,
         autoplayTimeout: 4000,
