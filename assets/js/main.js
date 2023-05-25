@@ -1,38 +1,40 @@
 $(function () {
   ScrollRevealaAm();
 });
-gsap.registerPlugin(
-  ScrollTrigger
-);
+gsap.registerPlugin(ScrollTrigger);
 
 // GSAP Animation
 const tl = gsap.timeline();
 
 // Pinned element animation
-tl.to('.section_2_left', {
-  y: '-50%',
-  duration: 1
+tl.to(".section_2_left", {
+  y: "-50%",
+  duration: 1,
 });
 
 // Scroll trigger for content animation
 ScrollTrigger.create({
-  trigger: '.section_2_main',
-  start: 'top top',
-  end: 'bottom bottom',
+  trigger: ".section_2_main",
+  start: "top top",
+  end: "bottom bottom",
   animation: tl,
   scrub: true,
-  pin: '.section_2_left',
+  pin: ".section_2_left",
 });
-
 
 // smooth scrolling container
 const smoother = ScrollSmoother.create({
-  smooth: 1,
+  wrapper: ".main",
+  content: ".sections",
+  smooth: 3,
   effects: true,
-  // normalizeScroll: true,
   smoothTouch: 0.1,
+  normalizeScroll: {
+    allowNestedScroll: false,
+  },
 });
-
+/* After Adding New Content to DOM */
+smoother.refresh();
 
 // Image Frame sequence Animation
 const html = document.documentElement;
@@ -77,16 +79,14 @@ window.addEventListener("scroll", () => {
 
 preloadImages();
 
-
 window.onload = function () {
-
   function setCurrentSlide(ele, index) {
     $(".swiper1 .swiper-slide").removeClass("selected");
     ele.addClass("selected");
     //swiper1.initialSlide=index;
   }
 
-  var swiper1 = new Swiper('.swiper1', {
+  var swiper1 = new Swiper(".swiper1", {
     slidesPerView: 5,
     paginationClickable: true,
     spaceBetween: 10,
@@ -94,7 +94,7 @@ window.onload = function () {
     loop: false,
     onTab: function (swiper) {
       var n = swiper1.clickedIndex;
-    }
+    },
   });
   swiper1.slides.each(function (index, val) {
     var ele = $(this);
@@ -105,14 +105,13 @@ window.onload = function () {
     });
   });
 
-
-  var swiper2 = new Swiper('.swiper2', {
-    direction: 'horizontal',
+  var swiper2 = new Swiper(".swiper2", {
+    direction: "horizontal",
     // slidesPerView: 1,
     spaceBetween: 50,
     freeMode: false,
     loop: false,
-    slidesOffsetBefore: 5, // This is 5px slide offset 
+    slidesOffsetBefore: 5, // This is 5px slide offset
     slidesPerView: 1.3,
     autoHeight: true,
     centeredSlides: true,
@@ -120,16 +119,15 @@ window.onload = function () {
       releaseOnEdges: true,
     },
     onSlideChangeEnd: function (swiper) {
-
       var n = swiper.activeIndex;
       setCurrentSlide($(".swiper1 .swiper-slide").eq(n), n);
       swiper1.slideTo(n, 500, false);
-    }
+    },
   });
 
   var Data = "brochure, package, standee, books, more";
-  $(".start").on('click', function () {
-    $(".show").html('');
+  $(".start").on("click", function () {
+    $(".show").html("");
     var flag = true,
       j = 0;
     //if(flag){
@@ -147,14 +145,9 @@ window.onload = function () {
     })();
     //}
   });
+};
 
-
-}
-
-
-
-
-var owl = $('#review_carousel');
+var owl = $("#review_carousel");
 owl.owlCarousel({
   items: 2,
   loop: true,
@@ -162,100 +155,152 @@ owl.owlCarousel({
   autoplay: true,
   smartSpeed: 1500,
   autoplayTimeout: 4000,
-  autoplayHoverPause: true
+  autoplayHoverPause: true,
 });
-$('.play').on('click', function () {
-  owl.trigger('play.owl.autoplay', [1000])
-})
-$('.stop').on('click', function () {
-  owl.trigger('stop.owl.autoplay')
-})
+$(".play").on("click", function () {
+  owl.trigger("play.owl.autoplay", [1000]);
+});
+$(".stop").on("click", function () {
+  owl.trigger("stop.owl.autoplay");
+});
 
-
-
-
-gsap.set('.cursor', {
+gsap.set(".cursor", {
   xPercent: -50,
-  yPercent: -50
-})
+  yPercent: -50,
+});
 
-let cursor = document.querySelector('.cursor')
-let hand = document.querySelector('.hand')
-let title = document.querySelector('.header_title')
+let cursor = document.querySelector(".cursor");
+let hand = document.querySelector(".highlight_title");
+let title = document.querySelector(".hover_layer");
 
 let mouseX;
 let mouseY;
 
-window.addEventListener('mousemove', e => {
+window.addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 
   gsap.to(cursor, 0.5, {
     x: mouseX,
-    y: mouseY
-  })
-})
+    y: mouseY,
+  });
+});
 
-title.addEventListener('mouseenter', () => {
+title.addEventListener("mouseenter", () => {
   gsap.to(hand, 1, {
     scale: 1,
     opacity: 1,
-    top: '-75px',
-    left: '-75px',
+    top: "-75px",
+    left: "-75px",
     rotate: 0,
-    ease: Elastic.easeOut.config(1, 0.3)
-  })
-})
+    ease: Elastic.easeOut.config(1, 0.3),
+  });
+});
 
-title.addEventListener('mousemove', () => {
+title.addEventListener("mousemove", () => {
   gsap.to(hand, 1, {
     x: mouseX,
-    y: mouseY
-  })
-})
+    y: mouseY,
+  });
+});
 
-title.addEventListener('mouseleave', () => {
+title.addEventListener("mouseleave", () => {
   gsap.to(hand, 0.2, {
     scale: 0,
     opacity: 0,
-    top: '10',
-    left: '40',
+    top: "10",
+    left: "40",
     rotate: 45,
-  })
-})
-
-$(document).ready(function () {
-
-  $(".hover_layer-sm").hover(function () {
-
-    $(".cursor").addClass("highlight_title-sm");
-  }, function () {
-
-    $(".cursor").removeClass("highlight_title-sm");
-  });
-
-  $(".hover_layer-md").hover(function () {
-
-    $(".cursor").addClass("highlight_title-md");
-  }, function () {
-
-    $(".cursor").removeClass("highlight_title-md");
-  });
-
-  $(".hover_layer").hover(function () {
-
-    $(".cursor").addClass("highlight_title");
-  }, function () {
-
-    $(".cursor").removeClass("highlight_title");
   });
 });
+
+$(document).ready(function () {
+  $(".bg-white").hover(
+    function () {
+      $(".cursor").css("background", "#000");
+    },
+    function () {
+      $(".cursor").css("background", "#fff");
+    }
+  );
+  $(".hover_layer-sm").hover(
+    function () {
+      $(".cursor").addClass("highlight_title-sm");
+    },
+    function () {
+      $(".cursor").removeClass("highlight_title-sm");
+    }
+  );
+
+  $(".hover_layer-md").hover(
+    function () {
+      $(".cursor").addClass("highlight_title-md");
+    },
+    function () {
+      $(".cursor").removeClass("highlight_title-md");
+    }
+  );
+
+  $(".hover_layer").hover(
+    function () {
+      $(".cursor").addClass("highlight_title");
+    },
+    function () {
+      $(".cursor").removeClass("highlight_title");
+    }
+  );
+});
+
+gsap.set(".photo:not(:first-child)", {opacity:0})
+
+const animation = gsap.to(".photo:not(:first-child)", {
+	opacity:1, stagger:1
+})
+
+ScrollTrigger.create({
+	trigger:".projects",
+	start:"top top",
+	end:"bottom bottom",
+	pin:".right-slide",
+	animation: animation,
+	scrub:true,
+})
+
+
+
+gsap.utils.toArray('.landingSlidesImage').forEach((el, index) => { 
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: el,
+      start: "top top",
+      end:"bottom bottom",
+      toggleActions: "play pause resume reverse",
+      //  markers: true
+    }
+  })
+  
+  tl
+  .set(el, {transformOrigin: 'center center'})
+  .fromTo(el, { scale: 1.3, }, {scale: 1, immediateRender: true})
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 function ScrollRevealaAm() {
-
   const sr = ScrollReveal({
     origin: "top",
     distance: "60px",
@@ -275,6 +320,12 @@ function ScrollRevealaAm() {
     origin: "bottom",
     reset: true,
   });
+  // sr.reveal(".sub-text", {
+  //   duration: 2000,
+  //   delay: 200,
+  //   origin: "bottom",
+  //   // reset: true,
+  // });
 
   sr.reveal(".anime_titile", {
     delay: 200,
@@ -283,12 +334,12 @@ function ScrollRevealaAm() {
     delay: 600,
     duration: 2000,
     origin: "right",
-    reset: true
+    reset: true,
   });
 
   sr.reveal(".tab_slider", {
     origin: "right",
     interval: 100,
-    reset: true
+    reset: true,
   });
 }
