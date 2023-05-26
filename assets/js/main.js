@@ -24,9 +24,9 @@ ScrollTrigger.create({
 
 // smooth scrolling container
 const smoother = ScrollSmoother.create({
-  wrapper: ".main",
-  content: ".sections",
-  smooth: 3,
+  // wrapper: ".main",
+  // content: ".sections",
+  smooth: 2,
   effects: true,
   smoothTouch: 0.1,
   normalizeScroll: {
@@ -251,37 +251,48 @@ $(document).ready(function () {
   );
 });
 
-gsap.set(".photo:not(:first-child)", {opacity:0})
+gsap.set(".photo:not(:first-child)", {
+  opacity: 0,
+})
 
 const animation = gsap.to(".photo:not(:first-child)", {
-	opacity:1, stagger:1
+  opacity: 1,
+  duration: 0.1,
+  stagger: 1
 })
 
 ScrollTrigger.create({
-	trigger:".projects",
-	start:"top top",
-	end:"bottom bottom",
-	pin:".right-slide",
-	animation: animation,
-	scrub:true,
+  trigger: ".projects",
+  start: "top top",
+  end: "bottom bottom",
+  pin: ".right-slide",
+  animation: animation,
+  scrub: true,
 })
 
 
 
-gsap.utils.toArray('.landingSlidesImage').forEach((el, index) => { 
+gsap.utils.toArray('.landingSlidesImage').forEach((el, index) => {
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: el,
       start: "top top",
-      end:"bottom bottom",
+      end: "bottom bottom",
       toggleActions: "play pause resume reverse",
       //  markers: true
     }
   })
-  
+
   tl
-  .set(el, {transformOrigin: 'center center'})
-  .fromTo(el, { scale: 1.3, }, {scale: 1, immediateRender: true})
+    .set(el, {
+      transformOrigin: 'center center'
+    })
+    .fromTo(el, {
+      scale: 1.3,
+    }, {
+      scale: 1,
+      immediateRender: true
+    })
 })
 
 
@@ -343,3 +354,21 @@ function ScrollRevealaAm() {
     reset: true,
   });
 }
+$("#buttontop").click(function () {
+  $("html").animate({
+    scrollTop: 0
+  }, "fast");
+});
+// $(function () {
+var isVisible = false;
+$(window).scroll(function () {
+  var shouldBeVisible = $(window).scrollTop() > 200;
+  if (shouldBeVisible && !isVisible) {
+    isVisible = true;
+    $('.btntop').show();
+  } else if (isVisible && !shouldBeVisible) {
+    isVisible = false;
+    $('.btntop').hide();
+  }
+});
+// });
