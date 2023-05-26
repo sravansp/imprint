@@ -60,7 +60,6 @@
     overflow: hidden;
     cursor: none;
     transition: 0.3s;
-    transition: transform .1s;
 }
 
 .highlight_title-md {
@@ -74,7 +73,6 @@
     overflow: hidden;
     cursor: none;
     transition: 0.3s;
-    transition: transform .1s;
 }
 
 .highlight_title {
@@ -88,7 +86,6 @@
     overflow: hidden;
     cursor: none;
     transition: 0.3s;
-    transition: transform .1s;
 }
 
 /* .hand {
