@@ -22,19 +22,6 @@ ScrollTrigger.create({
   pin: ".section_2_left",
 });
 
-// smooth scrolling container
-const smoother = ScrollSmoother.create({
-  // wrapper: ".main",
-  // content: ".sections",
-  smooth: 2,
-  effects: true,
-  smoothTouch: 0.1,
-  normalizeScroll: {
-    allowNestedScroll: false,
-  },
-});
-/* After Adding New Content to DOM */
-smoother.refresh();
 
 // Image Frame sequence Animation
 const html = document.documentElement;
@@ -223,6 +210,14 @@ $(document).ready(function () {
       $(".cursor").css("background", "#fff");
     }
   );
+  $("a, .button-57, .button-58").hover(
+    function () {
+      $(".cursor").css("display", "none");
+    },
+    function () {
+      $(".cursor").css("display", "block");
+    }
+  );
   $(".hover_layer-sm").hover(
     function () {
       $(".cursor").addClass("highlight_title-sm");
@@ -299,8 +294,92 @@ gsap.utils.toArray('.landingSlidesImage').forEach((el, index) => {
 
 
 
+// navbar 
+const navbar = document.querySelector("#navbar");
+
+let lastScrolltop = 0;
+
+window.addEventListener(
+  "scroll",
+  () => {
+    var {
+      pageYOffset
+    } = window;
+    if (pageYOffset > lastScrolltop) {
+      navbar.classList.remove("visible");
+    } else if (pageYOffset < lastScrolltop) {
+      navbar.classList.add("visible");
+    }
+    lastScrolltop = pageYOffset <= 0 ? 0 : pageYOffset;
+  }, {
+    passive: true
+  }
+);
 
 
+
+gsap.fromTo(".nav_items", {
+  opacity: 0,
+  y: -50
+}, {
+  duration: 1,
+  opacity: 1,
+  ease: "power2.out",
+  delay: 1,
+  y: 0
+});
+gsap.fromTo(".lptitle_span", {
+  opacity: 0,
+  // stagger: 0.5,
+  y: -50
+}, {
+  duration: 1,
+  opacity: 1,
+  ease: "power2.out",
+  stagger: 0.5,
+  delay: 1.2,
+  y: 0
+});
+gsap.fromTo(".bottam_lp_img", {
+  opacity: 0,
+  y: 400,
+}, {
+  duration: 0.8,
+  opacity: 1,
+  ease: "power2.out",
+  delay: 1.2,
+  y: 0
+});
+gsap.fromTo(".bottam_lp_img img", {
+  scale: 1.3,
+}, {
+  scale: 1,
+  immediateRender: true,
+  duration: 0.5,
+  delay: 1.5,
+});
+gsap.fromTo(".lp_center", {
+  opacity: 0,
+  stagger: 0.5,
+  y: -50
+}, {
+  duration: 1,
+  opacity: 1,
+  ease: "power2.out",
+  stagger: 0.5,
+  delay: 1.5,
+  y: 0
+});
+
+
+gsap.to(".layer_bottom_lp_img", {
+  duration: 1,
+  opacity:1,
+  height: "auto",
+  // repeat: -1,
+  yoyo: true,
+  delay: 2,
+});
 
 
 
@@ -372,3 +451,13 @@ $(window).scroll(function () {
   }
 });
 // });
+
+// smooth scrolling container
+const smoother = ScrollSmoother.create({
+  wrapper: ".main",
+  content: ".content",
+  smooth: 1,
+
+});
+/* After Adding New Content to DOM */
+smoother.refresh();

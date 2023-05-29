@@ -16,26 +16,85 @@
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css" />
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <link href="./dist/output.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link href="./dist/output.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="./assets/pluggins/owlcarousel/dist/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/custom.css" />
 </head>
 
 <body class="font-[Inter] text-[14px]">
-  <div class="main" id="scroll-container">
-    <div class="sections">
+  <main class="main" id="scroll-container">
+    <header>
+      <nav id="navbar"
+        class="navbar visible fixed top-0 left-0 flex items-center justify-between gap-[20px] w-full h-[72px] transition duration-300 pl-32 pr-32 z-50">
+        <div class="header_logo flex gap-2 justify-center items-center">
+          <img class="w-5 h-5" src="./assets/images/brand/imprint_black_logo.png" alt="">
+          <span class="text-black font-bold">
+            IMPRINT
+          </span>
+        </div>
+        <div class="nav_items flex items-center gap-8 text-xs">
+          <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
+            href="">About</a>
+          <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
+            href="">Works</a>
+          <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
+            href="">Contact US</a>
+          <a class="button-58 transition duration-300 p-2 w-max rounded-full text-xs px-4 text-white" href="">
+            <span class="text-btn">Let's Talk</span><span>Let's Talk</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <div class="content">
       <!-- SECTION START  -->
-      <section class="section panal section_1">
-        <div class="h-screen bg-white flex items-center justify-center">
-          <h4>Section I</h4>
+      <section class="section panal section_1 relative overflow-hidden">
+        <div class="pl-32 pr-32 min-h-screen h-full bg-white">
+          <div class="lp_title flex flex-col pt-32">
+            <span class="lptitle_span text-[#C6C6C6] text-sm">Unleash Your Vision</span>
+            <span class="lptitle_span text-[80px] font-bold leading-[80px]">Your Ultimate Offset<br>
+              <span class="text-[#0092D1]">Printing</span> Partner</span>
+          </div>
+          <div class="lp_center pt-8 pb-[320px] flex justify-between items-center">
+            <div class="two_circle flex gap-8 items-center">
+              <div class="circles flex relative">
+                <div class="circle1 bg-[#006C99] w-14 h-14 rounded-full"></div>
+                <div class="circle2 bg-[#202224] w-14 h-14 rounded-full absolute left-6"></div>
+              </div>
+              <div class="text-cir flex flex-col text-sm font-[500]">
+                <span>15,000+</span>
+                <span>Satisfied client</span>
+              </div>
+            </div>
+            <div class="w-2/5 text-[#5C5858]">
+              <span>Imprint printing press is the foremost provider of varied offset printing solutions to more than a
+                thousand clients today..</span>
+            </div>
+          </div>
+          <div class="bottam_lp_img absolute -bottom-16 left-1/2 -translate-x-1/2 -translate-y-0 w-full pl-32 pr-32">
+            <div class="relative">
+              <div class="flex overflow-hidden rounded-[45px]">
+                <img class="w-full" src="./assets/images/landing_img.png" alt="image">
+              </div>
+              <div
+                class="layer_bottom_lp_img backdrop-blur-[31px] rounded-[45px] bg-[white40] absolute -top-[10%] left-[3%] w-[210px] p-7">
+                <div class="flex flex-col gap-2">
+                  <span class="text-sm font-[500] text-black">Imprint Printing</span>
+                  <span class="text-sm text-black">Imprint Printing Press is not just any ordinary printing company - we
+                    are
+                    the foremost provider of varied </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
       <!-- SECTION END  -->
 
       <!-- SECTION START  -->
-      <section class="section panal section_2">
+      <section class="section panal section_2 overflow-hidden">
         <div class="section_2_main bg-[#161616] grid grid-cols-1 md:grid-cols-2 text-white">
           <div class="section_2_left hidden !h-screen md:flex flex-col justify-center items-center">
             <!-- <div class="animated_section h-screen"> -->
@@ -148,7 +207,7 @@
 
       <!-- SECTION START  -->
       <section class="section panal section_3">
-        <div class="h-screen bg-black text-white flex flex-col gap-8">
+        <div class="min-h-screen h-full bg-black text-white flex flex-col gap-8">
           <div
             class="header_section px-8 md:px-0 md:pl-[10%] lg:pl-[14%] mt-10 md:w-[45%] flex flex-col gap-6 hover_layer">
             <div class="header_title text-[20px] sm:text-[30px] md:text-[40px] font-bold leading-none">
@@ -164,7 +223,7 @@
             </div>
           </div>
 
-          <div class="main_slider w-full flex justify-end">
+          <div class="main_slider w-full flex justify-end mb-8">
             <div class="slider_section flex flex-col items-end gap-8 overflow-hidden">
               <!-- swiper1 -->
               <div class="swiper-container swiper1 relative !m-0 w-[50%]">
@@ -580,10 +639,11 @@
         </div>
       </footer>
     </div>
-  </div>
-  <div class="cursor"></div>
+  </main>
+  <div class="cursor z-[9999]"></div>
   <div class="btntop fixed bottom-[6%] right-[6%] hidden">
-    <button id="buttontop" tooltip="Back to Top" flow="left" class="p-2 flex items-center justify-center bg-gray-700 text-gray-400 rounded-xl">
+    <button id="buttontop" tooltip="Back to Top" flow="left"
+      class="p-2 flex items-center justify-center bg-gray-700 text-gray-400 rounded-xl">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
         class="w-4 h-4 text-gray-400">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
@@ -607,14 +667,13 @@
 
   <script src="./assets/pluggins/scrollsmoother/ss.js"></script>
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
   <script src="./assets/pluggins/owlcarousel/dist/owl.carousel.min.js"></script>
 
   <script src="./assets/pluggins/scrollreveal/scrollreveal.js"></script>
 
   <script src="./assets/js/main.js"></script>
-  <!-- <script src="./assets/js/custom.js"></script> -->
+  <script src="./assets/js/custom.js"></script>
 
 
   </script>
