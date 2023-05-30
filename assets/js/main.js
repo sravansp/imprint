@@ -258,7 +258,7 @@ window.onload = function () {
     duration: 0.5,
     opacity: 1,
     ease: "power2.out",
-    delay: 1,
+    delay: 2,
     y: 0
   });
   gsap.fromTo(".lptitle_span", {
@@ -270,17 +270,17 @@ window.onload = function () {
     opacity: 1,
     ease: "power2.out",
     stagger: 0.5,
-    delay: 1.2,
+    delay: 2.5,
     y: 0
   });
   gsap.fromTo(".bottam_lp_img", {
     opacity: 0,
     y: 400,
   }, {
-    duration: 0.8,
+    duration: 1,
     opacity: 1,
     ease: "power2.out",
-    delay: 1.2,
+    delay: 2.6,
     y: 0
   });
   gsap.fromTo(".bottam_lp_img img", {
@@ -289,7 +289,7 @@ window.onload = function () {
     scale: 1,
     immediateRender: true,
     duration: 0.5,
-    delay: 1.5,
+    delay: 3,
   });
   gsap.fromTo(".lp_center", {
     opacity: 0,
@@ -300,18 +300,18 @@ window.onload = function () {
     opacity: 1,
     ease: "power2.out",
     stagger: 0.5,
-    delay: 1.5,
+    delay: 3.1,
     y: 0
   });
 
 
   gsap.to(".layer_bottom_lp_img", {
-    duration: 1,
+    duration: 0.8,
     opacity: 1,
     height: "auto",
     // repeat: -1,
     yoyo: true,
-    delay: 2,
+    delay: 3.8,
   });
 
 
@@ -324,10 +324,18 @@ window.onload = function () {
     opacity: 1,
     ease: "power2.out",
     stagger: 0.5,
-    delay: 2.5,
+    delay: 4.4,
     x: 0
   });
-
+  const th = gsap.timeline();
+  th.to(".header_logo_loader", {
+    position: "inherit",
+    zIndex: 1,
+    height: "72px",
+    width: "auto",
+    duration: 0.8,
+    delay: 0.9,
+  });
 
   function setCurrentSlide(ele, index) {
     $(".swiper1 .swiper-slide").removeClass("selected");
@@ -477,18 +485,15 @@ const smoother = ScrollSmoother.create({
 smoother.refresh();
 
 $(window).on("load", function () {
-  $(".logo_animation_loader").fadeOut("slow");
+  // $(".logo_animation_loader").fadeOut("slow");
+  gsap.to(".logo_animation_loader", {
+    duration: 1,
+    display:"none",
+    delay: 1,
+  });
 });
 
-const th = gsap.timeline();
-th.to(".header_logo_loader", {
-  position: "inherit",
-  zIndex: 1,
-  height: "72px",
-  width: "auto",
-  duration: 1,
-  delay: 2.5,
-});
+
 // gsap.to(".logo", {
 //   width: "35px",
 //   duration: 1,
