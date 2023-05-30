@@ -25,14 +25,26 @@
 
 <body class="font-[Inter] text-[14px]">
   <main class="main" id="scroll-container">
+    <div class="logo_animation_loader">
+      <div class="header_logo_loader flex gap-2 justify-center items-center">
+        <img class="w-[30px] logo" src="./assets/images/brand/imprint_black_logo.png" alt="">
+            <!-- <span class="text-black font-bold">
+              IMPRINT
+            </span> -->
+            <img class="w-[100px]" src="./assets/images/brand/text.png" alt="">
+      </div>
+    </div>
     <header>
       <nav id="navbar"
         class="navbar visible fixed top-0 left-0 flex items-center justify-between gap-[20px] w-full h-[72px] transition duration-300 pl-32 pr-32 z-50">
-        <div class="header_logo flex gap-2 justify-center items-center">
-          <img class="w-5 h-5" src="./assets/images/brand/imprint_black_logo.png" alt="">
-          <span class="text-black font-bold">
-            IMPRINT
-          </span>
+        <div class="logo_animation">
+          <div class="header_logo flex gap-2 justify-center items-center">
+            <img class="w-[30px]" src="./assets/images/brand/imprint_black_logo.png" alt="">
+            <!-- <span class="text-black font-bold">
+              IMPRINT
+            </span> -->
+            <img class="w-[100px]" src="./assets/images/brand/text.png" alt="">
+          </div>
         </div>
         <div class="nav_items flex items-center gap-8 text-xs">
           <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
@@ -51,9 +63,9 @@
       <!-- SECTION START  -->
       <section class="section panal section_1 relative overflow-hidden">
         <div class="pl-32 pr-32 min-h-screen h-full bg-white">
-          <div class="lp_title flex flex-col pt-32">
+          <div class="lp_title flex flex-col pt-24 gap-4">
             <span class="lptitle_span text-[#C6C6C6] text-sm">Unleash Your Vision</span>
-            <span class="lptitle_span text-[80px] font-bold leading-[80px]">Your Ultimate Offset<br>
+            <span class="lptitle_span text-[80px] font-bold leading-[80px] ">Your Ultimate Offset<br>
               <span class="text-[#0092D1]">Printing</span> Partner</span>
           </div>
           <div class="lp_center pt-8 pb-[320px] flex justify-between items-center">
@@ -72,13 +84,13 @@
                 thousand clients today..</span>
             </div>
           </div>
-          <div class="bottam_lp_img absolute -bottom-16 left-1/2 -translate-x-1/2 -translate-y-0 w-full pl-32 pr-32">
+          <div
+            class="bottam_lp_img absolute -bottom-16 left-1/2 -translate-x-1/2 -translate-y-0 w-full pl-32 pr-32 h-[320px]">
             <div class="relative">
               <div class="flex overflow-hidden rounded-[45px]">
                 <img class="w-full" src="./assets/images/landing_img.png" alt="image">
               </div>
-              <div
-                class="layer_bottom_lp_img backdrop-blur-[31px] rounded-[45px] bg-[white40] absolute -top-[10%] left-[3%] w-[210px] p-7">
+              <div class="layer_bottom_lp_img rounded-[45px] bg-white absolute -top-[10%] left-[3%] w-[210px] p-7">
                 <div class="flex flex-col gap-2">
                   <span class="text-sm font-[500] text-black">Imprint Printing</span>
                   <span class="text-sm text-black">Imprint Printing Press is not just any ordinary printing company - we
@@ -88,10 +100,24 @@
               </div>
             </div>
           </div>
-
         </div>
       </section>
       <!-- SECTION END  -->
+
+      <!-- logo slider section START -->
+      <div class="wrapper-logo-slider h-48 w-full flex bg-[#141414] overflow-hidden relative items-center">
+        <img class="img-logo" src="./assets/images/logo_slider/1.png" alt="">
+        <img class="img-logo" src="./assets/images/logo_slider/2.png" alt="">
+        <img class="img-logo" src="./assets/images/logo_slider/3.png" alt="">
+        <img class="img-logo" src="./assets/images/logo_slider/4.png" alt="">
+        <img class="img-logo" src="./assets/images/logo_slider/5.png" alt="">
+        <img class="img-logo" src="./assets/images/logo_slider/6.png" alt="">
+        <img class="img-logo" src="./assets/images/logo_slider/7.png" alt="">
+        <img class="img-logo" src="./assets/images/logo_slider/8.png" alt="">
+        <img class="img-logo" src="./assets/images/logo_slider/9.png" alt="">
+      </div>
+      <!-- logo slider section END -->
+
 
       <!-- SECTION START  -->
       <section class="section panal section_2 overflow-hidden">
@@ -586,6 +612,8 @@
         </div>
       </section>
       <!-- SECTION END  -->
+
+      <!-- FOOTER START  -->
       <footer class="footer bg-[#2E3537] py-8 sm:py-12">
         <div class="container mx-auto px-4 text-white">
           <div class="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
@@ -638,6 +666,7 @@
 
         </div>
       </footer>
+      <!-- FOOTER END  -->
     </div>
   </main>
   <div class="cursor z-[9999]"></div>
@@ -663,6 +692,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/MotionPathPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/PixiPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/TextPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 
   <script src="./assets/pluggins/scrollsmoother/ss.js"></script>

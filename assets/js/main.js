@@ -66,73 +66,6 @@ window.addEventListener("scroll", () => {
 
 preloadImages();
 
-window.onload = function () {
-  function setCurrentSlide(ele, index) {
-    $(".swiper1 .swiper-slide").removeClass("selected");
-    ele.addClass("selected");
-    //swiper1.initialSlide=index;
-  }
-
-  var swiper1 = new Swiper(".swiper1", {
-    slidesPerView: 5,
-    paginationClickable: true,
-    spaceBetween: 10,
-    freeMode: true,
-    loop: false,
-    onTab: function (swiper) {
-      var n = swiper1.clickedIndex;
-    },
-  });
-  swiper1.slides.each(function (index, val) {
-    var ele = $(this);
-    ele.on("click", function () {
-      setCurrentSlide(ele, index);
-      swiper2.slideTo(index, 500, false);
-      //mySwiper.initialSlide=index;
-    });
-  });
-
-  var swiper2 = new Swiper(".swiper2", {
-    direction: "horizontal",
-    // slidesPerView: 1,
-    spaceBetween: 50,
-    freeMode: false,
-    loop: false,
-    slidesOffsetBefore: 5, // This is 5px slide offset
-    slidesPerView: 1.3,
-    autoHeight: true,
-    centeredSlides: true,
-    mousewheel: {
-      releaseOnEdges: true,
-    },
-    onSlideChangeEnd: function (swiper) {
-      var n = swiper.activeIndex;
-      setCurrentSlide($(".swiper1 .swiper-slide").eq(n), n);
-      swiper1.slideTo(n, 500, false);
-    },
-  });
-
-  var Data = "brochure, package, standee, books, more";
-  $(".start").on("click", function () {
-    $(".show").html("");
-    var flag = true,
-      j = 0;
-    //if(flag){
-    //flag = false;
-    (function Data() {
-      if (j < Data.length) {
-        setTimeout(function () {
-          $(".show").html(Data.slice(0, j++));
-          Data();
-        }, 200);
-      } else {
-        $(".show").html(Data);
-        flag = true;
-      }
-    })();
-    //}
-  });
-};
 
 var owl = $("#review_carousel");
 owl.owlCarousel({
@@ -210,7 +143,7 @@ $(document).ready(function () {
       $(".cursor").css("background", "#fff");
     }
   );
-  $("a, .button-57, .button-58").hover(
+  $("a, .button-57, .button-58, .btntop").hover(
     function () {
       $(".cursor").css("display", "none");
     },
@@ -316,71 +249,152 @@ window.addEventListener(
   }
 );
 
+window.onload = function () {
+
+  gsap.fromTo(".nav_items", {
+    opacity: 0,
+    y: -20
+  }, {
+    duration: 0.5,
+    opacity: 1,
+    ease: "power2.out",
+    delay: 1,
+    y: 0
+  });
+  gsap.fromTo(".lptitle_span", {
+    opacity: 0,
+    // stagger: 0.5,
+    y: -50
+  }, {
+    duration: 1,
+    opacity: 1,
+    ease: "power2.out",
+    stagger: 0.5,
+    delay: 1.2,
+    y: 0
+  });
+  gsap.fromTo(".bottam_lp_img", {
+    opacity: 0,
+    y: 400,
+  }, {
+    duration: 0.8,
+    opacity: 1,
+    ease: "power2.out",
+    delay: 1.2,
+    y: 0
+  });
+  gsap.fromTo(".bottam_lp_img img", {
+    scale: 1.3,
+  }, {
+    scale: 1,
+    immediateRender: true,
+    duration: 0.5,
+    delay: 1.5,
+  });
+  gsap.fromTo(".lp_center", {
+    opacity: 0,
+    stagger: 0.5,
+    y: -50
+  }, {
+    duration: 1,
+    opacity: 1,
+    ease: "power2.out",
+    stagger: 0.5,
+    delay: 1.5,
+    y: 0
+  });
 
 
-gsap.fromTo(".nav_items", {
-  opacity: 0,
-  y: -50
-}, {
-  duration: 1,
-  opacity: 1,
-  ease: "power2.out",
-  delay: 1,
-  y: 0
-});
-gsap.fromTo(".lptitle_span", {
-  opacity: 0,
-  // stagger: 0.5,
-  y: -50
-}, {
-  duration: 1,
-  opacity: 1,
-  ease: "power2.out",
-  stagger: 0.5,
-  delay: 1.2,
-  y: 0
-});
-gsap.fromTo(".bottam_lp_img", {
-  opacity: 0,
-  y: 400,
-}, {
-  duration: 0.8,
-  opacity: 1,
-  ease: "power2.out",
-  delay: 1.2,
-  y: 0
-});
-gsap.fromTo(".bottam_lp_img img", {
-  scale: 1.3,
-}, {
-  scale: 1,
-  immediateRender: true,
-  duration: 0.5,
-  delay: 1.5,
-});
-gsap.fromTo(".lp_center", {
-  opacity: 0,
-  stagger: 0.5,
-  y: -50
-}, {
-  duration: 1,
-  opacity: 1,
-  ease: "power2.out",
-  stagger: 0.5,
-  delay: 1.5,
-  y: 0
-});
+  gsap.to(".layer_bottom_lp_img", {
+    duration: 1,
+    opacity: 1,
+    height: "auto",
+    // repeat: -1,
+    yoyo: true,
+    delay: 2,
+  });
 
 
-gsap.to(".layer_bottom_lp_img", {
-  duration: 1,
-  opacity:1,
-  height: "auto",
-  // repeat: -1,
-  yoyo: true,
-  delay: 2,
-});
+  gsap.fromTo(".text-cir", {
+    opacity: 0,
+    stagger: 0.5,
+    x: -20
+  }, {
+    duration: 0.8,
+    opacity: 1,
+    ease: "power2.out",
+    stagger: 0.5,
+    delay: 2.5,
+    x: 0
+  });
 
+
+  function setCurrentSlide(ele, index) {
+    $(".swiper1 .swiper-slide").removeClass("selected");
+    ele.addClass("selected");
+    swiper1.initialSlide = index;
+  }
+
+  var swiper1 = new Swiper(".swiper1", {
+    slidesPerView: 5,
+    paginationClickable: true,
+    spaceBetween: 10,
+    freeMode: true,
+    loop: false,
+    onTab: function (swiper) {
+      var n = swiper1.clickedIndex;
+    },
+  });
+  swiper1.slides.each(function (index, val) {
+    var ele = $(this);
+    ele.on("click", function () {
+      setCurrentSlide(ele, index);
+      swiper2.slideTo(index, 500, false);
+      //mySwiper.initialSlide=index;
+    });
+  });
+
+  var swiper2 = new Swiper(".swiper2", {
+    direction: "horizontal",
+    // slidesPerView: 1,
+    spaceBetween: 50,
+    freeMode: false,
+    loop: false,
+    slidesOffsetBefore: 5, // This is 5px slide offset
+    slidesPerView: 1.3,
+    autoHeight: true,
+    centeredSlides: true,
+    mousewheel: {
+      releaseOnEdges: true,
+    },
+    onSlideChangeEnd: function (swiper) {
+      var n = swiper.activeIndex;
+      setCurrentSlide($(".swiper1 .swiper-slide").eq(n), n);
+      swiper1.slideTo(n, 500, false);
+    },
+  });
+
+  var Data = "brochure, package, standee, books, more";
+  $(".start").on("click", function () {
+    $(".show").html("");
+    var flag = true,
+      j = 0;
+    //if(flag){
+    //flag = false;
+    (function Data() {
+      if (j < Data.length) {
+        setTimeout(function () {
+          $(".show").html(Data.slice(0, j++));
+          Data();
+        }, 200);
+      } else {
+        $(".show").html(Data);
+        flag = true;
+      }
+    })();
+    //}
+  });
+};
 
 
 
@@ -461,3 +475,129 @@ const smoother = ScrollSmoother.create({
 });
 /* After Adding New Content to DOM */
 smoother.refresh();
+
+$(window).on("load", function () {
+  $(".logo_animation_loader").fadeOut("slow");
+});
+
+const th = gsap.timeline();
+th.to(".header_logo_loader", {
+  position: "inherit",
+  zIndex: 1,
+  height: "72px",
+  width: "auto",
+  duration: 1,
+  delay: 2.5,
+});
+// gsap.to(".logo", {
+//   width: "35px",
+//   duration: 1,
+//   delay: 2.5,
+// });
+// gsap.to(".logo-text", {
+//   width: "100px",
+//   duration: 1,
+//   delay: 2.5,
+// });
+
+
+
+const wrapper = document.querySelector(".wrapper-logo-slider ");
+
+const boxes = gsap.utils.toArray(".img-logo");
+
+const loop = horizontalLoop(boxes, {
+  paused: true, // Sets the tween to be paused initially
+  repeat: -1 // Makes sure the tween runs infinitely
+});
+
+// Start the tween
+loop.play() // Call to start playing the tween
+
+// ScrollTrigger set up for the whole duration of the body's scroll
+ScrollTrigger.create({
+  start: 0,
+  end: 'max',
+  onUpdate: function (self) {
+    self.direction === -1 ? loop.timeScale(-1) : loop.timeScale(1) // onUpdate of the ST toggling direction of tween via changing its timeScale depending on direction of scroll
+  }
+})
+
+function horizontalLoop(items, config) {
+  items = gsap.utils.toArray(items);
+  config = config || {};
+  let tl = gsap.timeline({
+      repeat: config.repeat,
+      paused: config.paused,
+      defaults: {
+        ease: "none"
+      },
+      onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)
+    }),
+    length = items.length,
+    startX = items[0].offsetLeft,
+    times = [],
+    widths = [],
+    xPercents = [],
+    curIndex = 0,
+    pixelsPerSecond = (config.speed || 1) * 100,
+    snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
+    totalWidth, curX, distanceToStart, distanceToLoop, item, i;
+  gsap.set(items, { // convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
+    xPercent: (i, el) => {
+      let w = widths[i] = parseFloat(gsap.getProperty(el, "width", "px"));
+      xPercents[i] = snap(parseFloat(gsap.getProperty(el, "x", "px")) / w * 100 + gsap.getProperty(el, "xPercent"));
+      return xPercents[i];
+    }
+  });
+  gsap.set(items, {
+    x: 0
+  });
+  totalWidth = items[length - 1].offsetLeft + xPercents[length - 1] / 100 * widths[length - 1] - startX + items[length - 1].offsetWidth * gsap.getProperty(items[length - 1], "scaleX") + (parseFloat(config.paddingRight) || 0);
+  for (i = 0; i < length; i++) {
+    item = items[i];
+    curX = xPercents[i] / 100 * widths[i];
+    distanceToStart = item.offsetLeft + curX - startX;
+    distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
+    tl.to(item, {
+        xPercent: snap((curX - distanceToLoop) / widths[i] * 100),
+        duration: distanceToLoop / pixelsPerSecond
+      }, 0)
+      .fromTo(item, {
+        xPercent: snap((curX - distanceToLoop + totalWidth) / widths[i] * 100)
+      }, {
+        xPercent: xPercents[i],
+        duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond,
+        immediateRender: false
+      }, distanceToLoop / pixelsPerSecond)
+      .add("label" + i, distanceToStart / pixelsPerSecond);
+    times[i] = distanceToStart / pixelsPerSecond;
+  }
+
+  function toIndex(index, vars) {
+    vars = vars || {};
+    (Math.abs(index - curIndex) > length / 2) && (index += index > curIndex ? -length : length); // always go in the shortest direction
+    let newIndex = gsap.utils.wrap(0, length, index),
+      time = times[newIndex];
+    if (time > tl.time() !== index > curIndex) { // if we're wrapping the timeline's playhead, make the proper adjustments
+      vars.modifiers = {
+        time: gsap.utils.wrap(0, tl.duration())
+      };
+      time += tl.duration() * (index > curIndex ? 1 : -1);
+    }
+    curIndex = newIndex;
+    vars.overwrite = true;
+    return tl.tweenTo(time, vars);
+  }
+  tl.next = vars => toIndex(curIndex + 1, vars);
+  tl.previous = vars => toIndex(curIndex - 1, vars);
+  tl.current = () => curIndex;
+  tl.toIndex = (index, vars) => toIndex(index, vars);
+  tl.times = times;
+  tl.progress(1, true).progress(0, true); // pre-render for performance
+  if (config.reversed) {
+    tl.vars.onReverseComplete();
+    tl.reverse();
+  }
+  return tl;
+}

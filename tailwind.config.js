@@ -4,9 +4,10 @@ module.exports = {
   './home.html'],
   theme: {
     extend: {},
+    colors:{
+      white40 :'rgb(255, 255, 255, 0.4)',
+    },
   },
-  colors:{
-    white40:'rgb(255, 255, 255, 0.4)'
-  },
+ 
   plugins: [],
 }
