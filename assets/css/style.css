@@ -367,6 +367,7 @@ nav.visible {
     overflow: hidden;
     opacity: 0;
 }
+
 .logo_animation_loader {
     height: 100vh;
     background: #fff;
@@ -376,10 +377,12 @@ nav.visible {
     z-index: 9999;
     overflow: hidden;
 }
+
 .logo_animation_loader~body {
     height: 100%;
     overflow: hidden;
 }
+
 .header_logo_loader {
     height: 100vh;
     padding-left: 8rem;
@@ -400,26 +403,15 @@ nav.visible {
     opacity: 0;
 } */
 
-.wrapper-logo-slider {
+/* .wrapper-logo-slider {
 
   }
-  
-  .carousel {
-    background: blue;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .img-logo {
+   */
+
+.img-logo {
     width: 13%;
     aspect-ratio: 6/2;
     object-fit: contain;
     opacity: 0.4;
     /* mix-blend-mode: color-burn; */
-  }
+}
