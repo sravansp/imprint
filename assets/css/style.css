@@ -385,6 +385,7 @@ nav.visible {
     padding-left: 8rem;
     padding-right: 8rem;
     /* z-index: 9999; */
+    scale: 2.5;
     width: 100%;
     position: absolute;
     display: flex;
@@ -416,8 +417,9 @@ nav.visible {
   }
   
   .img-logo {
-    width: 12%;
-    aspect-ratio: 4/2;
+    width: 13%;
+    aspect-ratio: 6/2;
     object-fit: contain;
+    opacity: 0.4;
     /* mix-blend-mode: color-burn; */
   }

@@ -76,13 +76,29 @@ owl.owlCarousel({
   smartSpeed: 1500,
   autoplayTimeout: 4000,
   autoplayHoverPause: true,
+  responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:false
+        },
+        600:{
+            items:1,
+            nav:false
+        },
+        1000:{
+            items:2,
+            nav:false,
+            loop:false
+        }
+    }
 });
-$(".play").on("click", function () {
-  owl.trigger("play.owl.autoplay", [1000]);
-});
-$(".stop").on("click", function () {
-  owl.trigger("stop.owl.autoplay");
-});
+// $(".play").on("click", function () {
+//   owl.trigger("play.owl.autoplay", [1000]);
+// });
+// $(".stop").on("click", function () {
+//   owl.trigger("stop.owl.autoplay");
+// });
 
 gsap.set(".cursor", {
   xPercent: -50,
@@ -258,7 +274,7 @@ window.onload = function () {
     duration: 0.5,
     opacity: 1,
     ease: "power2.out",
-    delay: 2,
+    delay: 2.2,
     y: 0
   });
   gsap.fromTo(".lptitle_span", {
@@ -288,8 +304,8 @@ window.onload = function () {
   }, {
     scale: 1,
     immediateRender: true,
-    duration: 0.5,
-    delay: 3,
+    duration: 1,
+    delay: 3.1,
   });
   gsap.fromTo(".lp_center", {
     opacity: 0,
@@ -300,7 +316,7 @@ window.onload = function () {
     opacity: 1,
     ease: "power2.out",
     stagger: 0.5,
-    delay: 3.1,
+    delay: 3.5,
     y: 0
   });
 
@@ -309,6 +325,7 @@ window.onload = function () {
     duration: 0.8,
     opacity: 1,
     height: "auto",
+    ease:"back.out(1.7)",
     // repeat: -1,
     yoyo: true,
     delay: 3.8,
@@ -332,6 +349,7 @@ window.onload = function () {
     position: "inherit",
     zIndex: 1,
     height: "72px",
+    scale:1,
     width: "auto",
     duration: 0.8,
     delay: 0.9,
@@ -366,11 +384,12 @@ window.onload = function () {
     direction: "horizontal",
     // slidesPerView: 1,
     spaceBetween: 50,
-    freeMode: false,
+    freeMode: true,
     loop: false,
     slidesOffsetBefore: 5, // This is 5px slide offset
     slidesPerView: 1.3,
     autoHeight: true,
+    calculateHeight:true,
     centeredSlides: true,
     mousewheel: {
       releaseOnEdges: true,
@@ -485,26 +504,12 @@ const smoother = ScrollSmoother.create({
 smoother.refresh();
 
 $(window).on("load", function () {
-  // $(".logo_animation_loader").fadeOut("slow");
   gsap.to(".logo_animation_loader", {
     duration: 1,
     display:"none",
     delay: 1,
   });
 });
-
-
-// gsap.to(".logo", {
-//   width: "35px",
-//   duration: 1,
-//   delay: 2.5,
-// });
-// gsap.to(".logo-text", {
-//   width: "100px",
-//   duration: 1,
-//   delay: 2.5,
-// });
-
 
 
 const wrapper = document.querySelector(".wrapper-logo-slider ");
