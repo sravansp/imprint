@@ -31,7 +31,7 @@ const context = canvas.getContext("2d");
 const frameCount = 392;
 const currentFrame = (index) =>
   `./assets/images/resized/32cube%20(${index.toString().padStart(1, "0")}).webp`;
-
+  // `./assets/images/cubeseq/32cube%20(${index.toString().padStart(1, "0")}).png`;
 const preloadImages = () => {
   for (let i = 1; i < frameCount; i++) {
     const img = new Image();
@@ -41,8 +41,8 @@ const preloadImages = () => {
 
 const img = new Image();
 img.src = currentFrame(1);
-canvas.width = 600;
-canvas.height = 600;
+canvas.width = 654;
+canvas.height = 540;
 // canvas.width = 1308;
 // canvas.height = 1080;
 img.onload = function () {
