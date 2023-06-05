@@ -7,66 +7,66 @@ gsap.registerPlugin(ScrollTrigger);
 const tl = gsap.timeline();
 
 // Pinned element animation
-tl.to(".section_2_left", {
-  y: "-50%",
-  duration: 1,
-});
+// tl.to(".section_2_left", {
+//   y: "-50%",
+//   duration: 1,
+// });
 
 // Scroll trigger for content animation
-ScrollTrigger.create({
-  trigger: ".section_2_main",
-  start: "top top",
-  end: "bottom bottom",
-  animation: tl,
-  scrub: true,
-  pin: ".section_2_left",
-});
+// ScrollTrigger.create({
+//   trigger: ".section_2_main",
+//   start: "top top",
+//   end: "bottom bottom",
+//   animation: tl,
+//   scrub: true,
+//   pin: ".section_2_left",
+// });
 
 
 // Image Frame sequence Animation
-const html = document.documentElement;
-const canvas = document.getElementById("hero-lightpass");
-const context = canvas.getContext("2d");
+// const html = document.documentElement;
+// const canvas = document.getElementById("hero-lightpasss");
+// const context = canvas.getContext("2d");
 
-const frameCount = 392;
-const currentFrame = (index) =>
-  `./assets/images/resized1/32cube%20(${index.toString().padStart(1, "0")}).jpg`;
-  // `./assets/images/cubeseq/32cube%20(${index.toString().padStart(1, "0")}).png`;
-const preloadImages = () => {
-  for (let i = 1; i < frameCount; i++) {
-    const img = new Image();
-    img.src = currentFrame(i);
-  }
-};
+// const frameCount = 392;
+// const currentFrame = (index) =>
+//   `./assets/images/resized1/32cube%20(${index.toString().padStart(1, "0")}).jpg`;
+//   // `./assets/images/cubeseq/32cube%20(${index.toString().padStart(1, "0")}).png`;
+// const preloadImages = () => {
+//   for (let i = 1; i < frameCount; i++) {
+//     const img = new Image();
+//     img.src = currentFrame(i);
+//   }
+// };
 
-const img = new Image();
-img.src = currentFrame(1);
-canvas.width = 654;
-canvas.height = 540;
-// canvas.width = 1308;
-// canvas.height = 1080;
-img.onload = function () {
-  context.drawImage(img, 0, 0);
-};
+// const img = new Image();
+// img.src = currentFrame(1);
+// canvas.width = 654;
+// canvas.height = 540;
+// // canvas.width = 1308;
+// // canvas.height = 1080;
+// img.onload = function () {
+//   context.drawImage(img, 0, 0);
+// };
 
-const updateImage = (index) => {
-  img.src = currentFrame(index);
-  context.drawImage(img, 0, 0);
-};
+// const updateImage = (index) => {
+//   img.src = currentFrame(index);
+//   context.drawImage(img, 0, 0);
+// };
 
-window.addEventListener("scroll", () => {
-  const scrollTop = html.scrollTop;
-  const maxScrollTop = html.scrollHeight - window.innerHeight;
-  const scrollFraction = scrollTop / maxScrollTop;
-  const frameIndex = Math.min(
-    frameCount - 1,
-    Math.ceil(scrollFraction * frameCount)
-  );
+// window.addEventListener("scroll", () => {
+//   const scrollTop = html.scrollTop;
+//   const maxScrollTop = html.scrollHeight - window.innerHeight;
+//   const scrollFraction = scrollTop / maxScrollTop;
+//   const frameIndex = Math.min(
+//     frameCount - 1,
+//     Math.ceil(scrollFraction * frameCount)
+//   );
 
-  requestAnimationFrame(() => updateImage(frameIndex + 1));
-});
+//   requestAnimationFrame(() => updateImage(frameIndex + 1));
+// });
 
-preloadImages();
+// preloadImages();
 
 
 var owl = $("#review_carousel");
@@ -77,7 +77,7 @@ owl.owlCarousel({
   autoplay: true,
   smartSpeed: 1500,
   autoplayTimeout: 4000,
-  autoplayHoverPause: true,
+  autoplayHoverPause: false,
   responsiveClass:true,
     responsive:{
         0:{
@@ -91,7 +91,7 @@ owl.owlCarousel({
         1000:{
             items:2,
             nav:false,
-            loop:false
+            loop:true
         }
     }
 });

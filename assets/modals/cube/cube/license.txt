@@ -1,0 +1,11 @@
+Model Information:
+* title:	Mirror / Bump Cube | Rubix Cube ready to animate
+* source:	https://sketchfab.com/3d-models/mirror-bump-cube-rubix-cube-ready-to-animate-c987765894a64de8bcbd47e017781261
+* author:	BlackCube (https://sketchfab.com/blackcube4)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Mirror / Bump Cube | Rubix Cube ready to animate" (https://sketchfab.com/3d-models/mirror-bump-cube-rubix-cube-ready-to-animate-c987765894a64de8bcbd47e017781261) by BlackCube (https://sketchfab.com/blackcube4) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
