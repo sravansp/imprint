@@ -1,122 +1,135 @@
-console.clear();
+// learn what all this code means at
+// https://www.creativecodingclub.com/bundles/creative-coding-club
+// unlock over 200 GSAP lessons today
 
-//===================================================== canvas
-var renderer = new THREE.WebGLRenderer({ alpha: true, antialiase: true });
-renderer.setSize(1000, 500);
-$('#hero').append(renderer.domElement); 
-// document.body.appendChild(renderer.domElement);
 
-//===================================================== scene
-var scene = new THREE.Scene();
+const details = gsap.utils.toArray(".desktopContentSection:not(:first-child)")
+const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)")
 
-//===================================================== camera
-var camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
-);
-camera.position.z = 5;
-camera.position.y = 1.5;
-camera.position.x = 2;
 
-//===================================================== lights
-var light = new THREE.DirectionalLight(0xefefff, 3);
-light.position.set(1, 1, 1).normalize();
-scene.add(light);
-var light = new THREE.DirectionalLight(0xffefef, 3);
-light.position.set(-1, -1, -1).normalize();
-scene.add(light);
+gsap.set(photos, {
+  yPercent: 101
+})
 
-//===================================================== resize
-window.addEventListener("resize", function () {
-  let width = window.innerWidth;
-  let height = window.innerHeight;
-  renderer.setSize(width, height);
-  camera.aspect = width / height;
-  camera.updateProjectionMatrix();
+const allPhotos = gsap.utils.toArray(".desktopPhoto")
+
+
+// create
+let mm = gsap.matchMedia();
+
+// add a media query. When it matches, the associated function will run
+mm.add("(min-width: 600px)", () => {
+
+  // this setup code only runs when viewport is at least 600px wide
+  console.log("desktop")
+
+  ScrollTrigger.create({
+    trigger: ".project_gallery",
+    start: "top top",
+    end: "bottom bottom",
+    pin: ".right_pro"
+  })
+  gsap.utils.toArray(".desktopContentSection").forEach(function (elem) {
+    let headline = elem.querySelector("h1")
+    var color = elem.getAttribute('data-color');
+    console.log(color);
+    ScrollTrigger.create({
+      trigger: headline,
+      scrub: true,
+      onEnter: () => gsap.to('body', {
+        backgroundColor: color,
+        duration: 1.4
+      }),
+      onEnterBack: () => gsap.to('body', {
+        backgroundColor: color,
+        duration: 1.4
+      }),
+    });
+  });
+  //create scrolltrigger for each details section
+  //trigger photo animation when headline of each details section 
+  //reaches 80% of window height
+
+  details.forEach((detail, index) => {
+    // var color = detailsfull.getAttribute('data-color');
+    let headline = detail.querySelector("h1")
+    let animation = gsap.timeline()
+      .to(photos[index], {
+        yPercent: 0
+      }, {
+        duration: 2,
+        ease: "power2.out",
+      })
+      .set(allPhotos[index], {
+        autoAlpha: 0
+      })
+    ScrollTrigger.create({
+      trigger: headline,
+      start: "top 80%",
+      end: "top 50%",
+      animation: animation,
+      scrub: true,
+      markers: false,
+
+    })
+  })
+
+ 
+
+  return () => { // optional
+    // custom cleanup code here (runs when it STOPS matching)
+    console.log("mobile")
+  };
+
+
+
+
+
+
+  // $('.change-color').click(function() {
+  //   $("#id").attr("data-color","#000000"); 
+  //   console.log('change dark-mode');
+  //   ScrollTrigger.refresh()
+  // })
 });
 
-//===================================================== model
-var loader = new THREE.GLTFLoader();
-var mixer;
-var model;
-loader.load(
-  "https://raw.githubusercontent.com/baronwatts/models/master/robber.glb",
-  function (gltf) {
-    gltf.scene.traverse(function (node) {
-      if (node instanceof THREE.Mesh) {
-        node.castShadow = true;
-        node.material.side = THREE.DoubleSide;
-      }
-    });
 
-    model = gltf.scene;
-    model.scale.set(0.35, 0.35, 0.35);
-    scene.add(model);
 
-    mixer = new THREE.AnimationMixer(model);
-    // mixer.clipAction(gltf.animations[1]).play();
-    var action = mixer.clipAction(gltf.animations[1]);
-    action.play();
 
-    createAnimation(mixer, action, gltf.animations[1]);
-  }
-);
 
-var clock = new THREE.Clock();
-function render() {
-  requestAnimationFrame(render);
-  var delta = clock.getDelta();
-  if (mixer != null) mixer.update(delta);
-  // if (model) model.rotation.y += 0.025;
 
-  renderer.render(scene, camera);
-}
 
-render();
-gsap.registerPlugin(ScrollTrigger);
 
-function createAnimation(mixer, action, clip) {
-  let proxy = {
-    get time() {
-      return mixer.time;
-    },
-    set time(value) {
-      action.paused = false;
-      mixer.setTime(value);
-      action.paused = true;
-    }
-  };
-  // ScrollTrigger.create({
-  //   trigger: ".section_2_main",
-  //   start: "top top",
-  //   end: "bottom bottom",
-  //   animation: tl,
-  //   scrub: true,
-  //   pin: ".section_2_left",
-  // });
-  let scrollingTL = gsap.timeline({
-    scrollTrigger: {
-      // trigger: renderer.domElement,
-      trigger: ".section_2_main",
-      // start: "top top",
-      // end: "+=500%",
-      start: "top top",
-    end: "bottom bottom",
-      pin: true,
-      pin: ".section_2_left",
-      scrub: true,
-      markers: true,
-      onUpdate: function () {
-        camera.updateProjectionMatrix();
-        console.log(proxy.time)
-      }
-    }
-  });
 
-  scrollingTL.to(proxy, {
-    time: clip.duration,
-    repeat: 3,
-  });
-}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ScrollTrigger Docs
+
+https://greensock.com/docs/v3/Plugins/ScrollTrigger
+
+*/
+
+
+
+
+
+/* 
+
+learn more GreenSock and ScrollTrigger
+
+https://www.creativeCodingClub.com
+
+new lessons weekly
+less than $1 per week
+
+*/
