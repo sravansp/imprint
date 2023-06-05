@@ -150,7 +150,7 @@ function createAnimation(mixer, action, clip) {
                // pin: true,
                pin: ".section_2_left",
                scrub: true,
-               markers: true,
+               // markers: true,
                onUpdate: function () {
                     camera.updateProjectionMatrix();
                     // console.log(proxy.time)
