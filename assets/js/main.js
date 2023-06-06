@@ -153,7 +153,7 @@ title.addEventListener("mouseleave", () => {
 });
 
 $(document).ready(function () {
-  $(".bg-white").hover(
+  $(".bg-white, .white-bg").hover(
     function () {
       $(".cursor").css("background", "#000");
     },
@@ -196,53 +196,6 @@ $(document).ready(function () {
     }
   );
 });
-
-gsap.set(".photo:not(:first-child)", {
-  opacity: 0,
-})
-
-const animation = gsap.to(".photo:not(:first-child)", {
-  opacity: 1,
-  duration: 0.1,
-  stagger: 1
-})
-
-ScrollTrigger.create({
-  trigger: ".projects",
-  start: "top top",
-  end: "bottom bottom",
-  pin: ".right-slide",
-  animation: animation,
-  scrub: true,
-})
-
-
-
-gsap.utils.toArray('.landingSlidesImage').forEach((el, index) => {
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: el,
-      start: "top top",
-      end: "bottom bottom",
-      toggleActions: "play pause resume reverse",
-      //  markers: true
-    }
-  })
-
-  tl
-    .set(el, {
-      transformOrigin: 'center center'
-    })
-    .fromTo(el, {
-      scale: 1.3,
-    }, {
-      scale: 1,
-      immediateRender: true
-    })
-})
-
-
-
 
 
 // navbar 
@@ -346,17 +299,23 @@ window.onload = function () {
     delay: 4.4,
     x: 0
   });
-  const th = gsap.timeline();
-  th.to(".header_logo_loader", {
-    position: "inherit",
-    zIndex: 1,
-    height: "72px",
-    scale:1,
-    width: "auto",
-    duration: 0.8,
-    delay: 0.9,
-  });
+  
+  // create
+  let mm = gsap.matchMedia();
 
+  // add a media query. When it matches, the associated function will run
+  mm.add("(min-width: 768px)", () => {
+    const th = gsap.timeline();
+    th.to(".header_logo_loader", {
+      position: "inherit",
+      zIndex: 1,
+      height: "72px",
+      scale:1,
+      width: "auto",
+      duration: 0.5,
+      delay: 0.9,
+    });
+  });
   function setCurrentSlide(ele, index) {
     $(".swiper1 .swiper-slide").removeClass("selected");
     ele.addClass("selected");
@@ -613,3 +572,9 @@ function horizontalLoop(items, config) {
   }
   return tl;
 }
+
+const menu = document.querySelector('.menu');
+const btn = menu.querySelector('.nav-tgl');
+btn.addEventListener('click', evt => {
+	menu.classList.toggle('active');
+})

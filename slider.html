@@ -8,6 +8,7 @@
   <title>Document</title>
   <link href="./dist/output.css" rel="stylesheet">
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <style type="text/css">
   @font-face {
@@ -17,6 +18,45 @@
 </style>
 
 <body class="font-[Averta-CY] text-[14px]">
+  <header>
+    <nav id="navbar"
+      class="navbar visible fixed top-0 left-0 flex items-center justify-between gap-[20px] w-full h-[72px] transition duration-300 pl-32 pr-32 z-50 backdrop-filter backdrop-blur-lg bg-opacity-50">
+      <div class="logo_animation">
+        <div class="header_logo flex gap-2 justify-center items-center">
+          <img class="w-[30px]" src="./assets/images/brand/imprint_black_logo.png" alt="">
+          <!-- <span class="text-black font-bold">
+            IMPRINT
+          </span> -->
+          <img class="w-[100px]" src="./assets/images/brand/text.png" alt="">
+        </div>
+      </div>
+      <div class="nav_items flex items-center gap-8 text-xs">
+        <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
+          href="">About</a>
+        <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
+          href="">Works</a>
+        <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
+          href="">Contact Us</a>
+        <a class="button-58 transition duration-300 p-2 w-max rounded-full text-xs px-4 text-white" href="">
+          <span class="text-btn">Let's Talk</span><span>Let's Talk</span>
+        </a>
+        <div class="menu">
+          <button class="nav-tgl" type="button" aria-label="toggle menu">
+            <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
+          </button>
+          <nav class="nav">
+            <!-- I don't care about the menu elements here so I will hide them-->
+            <ul>
+              <li>element one</li>
+              <li>element two</li>
+              <li>element three</li>
+              <li>element four</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </nav>
+  </header>
   <div class="spacer"></div>
   <div class="pt-60">
     <div class="h-full px-3 sm:px-20 lg:px-44">
@@ -171,10 +211,17 @@
   <script src="./assets/pluggins/jquery/jquery-3.6.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
   <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
-  <script src="https://unpkg.com/three@0.87.1/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://unpkg.com/three@0.87.1/examples/js/controls/OrbitControls.js"></script> -->
   <script src="./assets/js/sectionpro.js"></script>
+  <script>
+    const menu = document.querySelector('.menu');
+const btn = menu.querySelector('.nav-tgl');
+btn.addEventListener('click', evt => {
+	menu.classList.toggle('active');
+})
+  </script>
 
   <style>
     body {

@@ -28,6 +28,7 @@
     src: url(./assets/fonts/AvertaCY-Regular.ttf) format("truetype");
   }
 </style>
+
 <body class="font-[Averta-CY] text-[14px]">
   <main class="main" id="scroll-container">
     <div class="logo_animation_loader">
@@ -41,7 +42,7 @@
     </div>
     <header>
       <nav id="navbar"
-        class="navbar visible fixed top-0 left-0 flex items-center justify-between gap-[20px] w-full h-[72px] transition duration-300 pl-32 pr-32 z-50">
+        class="navbar visible fixed top-0 left-0 flex items-center justify-between gap-[20px] w-full h-[72px] transition duration-300 sm:pl-10 sm:pr-10 md:pl-32 md:pr-32 z-50 backdrop-filter backdrop-blur-lg bg-opacity-50">
         <div class="logo_animation">
           <div class="header_logo flex gap-2 justify-center items-center">
             <img class="w-[30px]" src="./assets/images/brand/imprint_black_logo.png" alt="">
@@ -51,31 +52,46 @@
             <img class="w-[100px]" src="./assets/images/brand/text.png" alt="">
           </div>
         </div>
-        <div class="nav_items flex items-center gap-8 text-xs">
+        <div class="nav_items sm:flex items-center gap-8 text-xs hidden">
           <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
             href="">About</a>
           <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
             href="">Works</a>
           <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
-            href="">Contact US</a>
+            href="">Contact Us</a>
           <a class="button-58 transition duration-300 p-2 w-max rounded-full text-xs px-4 text-white" href="">
             <span class="text-btn">Let's Talk</span><span>Let's Talk</span>
           </a>
+          
+        </div>
+        <div class="menu sm:hidden">
+          <button class="nav-tgl" type="button" aria-label="toggle menu">
+            <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
+          </button>
+          <nav class="nav">
+            <!-- I don't care about the menu elements here so I will hide them-->
+            <ul>
+              <li>element one</li>
+              <li>element two</li>
+              <li>element three</li>
+              <li>element four</li>
+            </ul>
+          </nav>
         </div>
       </nav>
     </header>
     <div class="content">
       <!-- SECTION START  -->
       <section class="section panal section_1 relative overflow-hidden">
-        <div class="pl-32 pr-32 min-h-screen h-full bg-white">
+        <div class="pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-32 md:pr-32 min-h-screen h-full bg-white">
           <div class="lp_title flex flex-col pt-24 gap-4 relative">
             <span class="lptitle_span text-[#C6C6C6] text-sm">Unleash Your Vision</span>
-            <span class="lptitle_span text-[80px] font-bold leading-[80px] ">Your Ultimate Offset<br>
+            <span class="lptitle_span font-bold text-3xl sm:text-[50px] md:text-[60px] sm:leading-[50px] md:leading-[60px] ">Your Ultimate Offset<br>
               <span class="text-[#0092D1]">Printing</span> Partner</span>
             <!-- <img src="./assets/images/Christmas-stars.png" alt=""> -->
           </div>
           <div class="lp_center pt-8 pb-[30%] flex justify-between items-center">
-            <div class="two_circle flex gap-8 items-center">
+            <div class="two_circle flex flex-col w-1/2 sm:flex-row gap-3 sm:gap-8 items-center text-center">
               <div class="circles flex relative">
                 <div class="circle1 bg-[#006C99] w-14 h-14 rounded-full"></div>
                 <div class="circle2 bg-[#202224] w-14 h-14 rounded-full absolute left-6"></div>
@@ -85,7 +101,7 @@
                 <span>Satisfied client</span>
               </div>
             </div>
-            <div class="w-2/5 text-[#5C5858]">
+            <div class="w-1/2 sm:w-2/5 text-[#5C5858]">
               <span>Imprint printing press is the foremost provider of varied offset printing solutions to more than a
                 thousand clients today..</span>
             </div>
@@ -405,68 +421,19 @@
 
       <!-- SECTION START  -->
       <section class="section panal section_4">
-        <!-- <div class="projects flex bg-[#303030]">
-          <div class="left-slide w-2/4">
-            <div class="detailsWrapper m-auto w-[80%]">
-              <div class="details h-screen flex flex-col justify-center items-center">
-                <div class="img_items w-[90%] h-[90%] rounded-2xl overflow-hidden">
-                  <img class="landingSlidesImage" src="./assets/images/cover1.jpg" />
-                </div>
-              </div>
-              <div class="details h-screen flex flex-col justify-center items-center">
-                <div class="img_items w-[90%] h-[90%] rounded-2xl overflow-hidden">
-                  <img class="landingSlidesImage" src="./assets/images/cover2.jpg" />
-                </div>
-              </div>
-              <div class="details h-screen flex flex-col justify-center items-center">
-                <div class="img_items w-[90%] h-[90%] rounded-2xl overflow-hidden">
-                  <img class="landingSlidesImage" src="./assets/images/cover3.jpg" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="right-slide w-3/6 h-screen flex flex-col justify-center">
-            <div class="photos w-[40vw] h-[40vw] relative">
-              <div class="photo absolute w-full h-full text-white flex items-center justify-center bg-[#303030]"
-                background-color="#6a1b9a">
-                <div class="project_data flex flex-col w-[60%] hover_layer">
-                  <span class="text-[50px] font-bold">1.</span>
-                  <span class="sub-text text-[20px] font-bold">Imprint Printing Press is not just any ordinary printing
-                    company</span>
-                </div>
-              </div>
-              <div class="photo absolute w-full h-full text-white flex items-center justify-center bg-[#303030]"
-                background-color="#fc0026">
-                <div class="project_data flex flex-col w-[60%] hover_layer">
-                  <span class="text-[50px] font-bold">2.</span>
-                  <span class="sub-text text-[20px] font-bold">Our experience in print quality goes beyond just having
-                    the latest printing technology. </span>
-                </div>
-              </div>
-              <div class="photo absolute w-full h-full text-white flex items-center justify-center bg-[#303030]"
-                background-color="#00b985">
-                <div class="project_data flex flex-col w-[60%] hover_layer">
-                  <span class="text-[50px] font-bold">3.</span>
-                  <span class="sub-text text-[20px] font-bold">It requires an eye for detail, both from the man
-                    operating the machines and the machines themselves. </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <div class="pt-60">
+        <div class="pt-60 white-bg">
           <div class="h-full px-3 sm:px-20 lg:px-44">
             <div class="section_header text-left pb-40 text-6xl">
               <h2 class="flex flex-col leading-[60px]">
-                featured
-                <span>projects</span>
+                Featured
+                <span>Projects</span>
               </h2>
             </div>
             <div class="project_gallery flex">
               <div class="left_pro w-1/2 hidden sm:block">
                 <div class="desktopContent m-auto w-4/5">
-                  <div class="desktopContentSection min-h-screen flex flex-col justify-center" data-color='#ffece2'>
+                  <div class="desktopContentSection min-h-screen flex flex-col justify-center" curser-color="#ff5800"
+                    data-color='#ffece2'>
                     <div class="project_head mt-5 sm:mt-0">
                       <h1 class="md:text-[1.5vw] text-xl">Imprint Project 1</h1>
                     </div>
@@ -478,7 +445,8 @@
                       <span>web, mobile, product</span>
                     </div>
                   </div>
-                  <div class="desktopContentSection min-h-screen flex flex-col justify-center" data-color='#e2fff5'>
+                  <div class="desktopContentSection min-h-screen flex flex-col justify-center" curser-color="#00ffa7"
+                    data-color='#e2fff5'>
                     <div class="project_head mt-5 sm:mt-0">
                       <h1 class="md:text-[1.5vw] text-xl">Imprint Project 2</h1>
                     </div>
@@ -490,7 +458,8 @@
                       <span>web, mobile, product</span>
                     </div>
                   </div>
-                  <div class="desktopContentSection min-h-screen flex flex-col justify-center" data-color='#ffe0e7'>
+                  <div class="desktopContentSection min-h-screen flex flex-col justify-center" curser-color="#ff003a"
+                    data-color='#ffe0e7'>
                     <div class="project_head mt-5 sm:mt-0">
                       <h1 class="md:text-[1.5vw] text-xl">Imprint Project 3</h1>
                     </div>
@@ -502,7 +471,8 @@
                       <span>web, mobile, product</span>
                     </div>
                   </div>
-                  <div class="desktopContentSection min-h-screen flex flex-col justify-center" data-color='#fff9e6'>
+                  <div class="desktopContentSection min-h-screen flex flex-col justify-center" curser-color="#ffc200"
+                    data-color='#fff9e6'>
                     <div class="project_head mt-5 sm:mt-0">
                       <h1 class="md:text-[1.5vw] text-xl">Imprint Project 4</h1>
                     </div>
@@ -514,13 +484,13 @@
                       <span>web, mobile, product</span>
                     </div>
                   </div>
-      
+
                 </div>
               </div>
-      
+
               <div
                 class="right_pro sm:h-screen sm:w-1/2 flex flex-col sm:justify-center h-auto w-full items-center sm:items-start">
-      
+
                 <!-- mobile content -->
                 <div class="mobileContent block sm:hidden w-[80vw]">
                   <div class="mobilePhoto overflow-hidden w-[80vw] h-[80vw] mt-20 rounded-2xl ">
@@ -536,7 +506,7 @@
                   <div class="tag my-7 text-[#6f6f6f] sm:text-[1.16vw]  tracking-[0.04375em] leading-[156%]">
                     <span>web, mobile, product</span>
                   </div>
-      
+
                   <div class="mobilePhoto overflow-hidden w-[80vw] h-[80vw] mt-20 rounded-2xl">
                     <img class="w-full" src="./assets/images/cover2.jpg" alt="">
                   </div>
@@ -550,7 +520,7 @@
                   <div class="tag my-7 text-[#6f6f6f] sm:text-[1.16vw]  tracking-[0.04375em] leading-[156%]">
                     <span>web, mobile, product</span>
                   </div>
-      
+
                   <div class="mobilePhoto overflow-hidden w-[80vw] h-[80vw] mt-20 rounded-2xl">
                     <img class="w-full" src="./assets/images/cover3.jpg" alt="">
                   </div>
@@ -564,7 +534,7 @@
                   <div class="tag my-7 text-[#6f6f6f] sm:text-[1.16vw]  tracking-[0.04375em] leading-[156%]">
                     <span>web, mobile, product</span>
                   </div>
-      
+
                   <div class="mobilePhoto overflow-hidden w-[80vw] h-[80vw] mt-20 rounded-2xl">
                     <img class="w-full" src="./assets/images/cover4.jpg" alt="">
                   </div>
@@ -579,10 +549,11 @@
                     <span>web, mobile, product</span>
                   </div>
                 </div>
-      
+
                 <!-- desktop content -->
-      
-                <div class="desktopPhotos w-[25vw] h-[40vw] m-auto rounded-2xl relative overflow-hidden hidden sm:block">
+
+                <div
+                  class="desktopPhotos w-[25vw] h-[40vw] m-auto rounded-2xl relative overflow-hidden hidden sm:block">
                   <div class="desktopPhoto overflow-hidden absolute w-full h-full">
                     <img class="w-full" src="./assets/images/cover1.jpg" alt="">
                   </div>
@@ -596,7 +567,7 @@
                     <img class="w-full" src="./assets/images/cover4.jpg" alt="">
                   </div>
                 </div>
-      
+
               </div>
             </div>
           </div>

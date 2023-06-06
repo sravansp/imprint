@@ -32,6 +32,7 @@ mm.add("(min-width: 600px)", () => {
   gsap.utils.toArray(".desktopContentSection").forEach(function (elem) {
     let headline = elem.querySelector("h1")
     var color = elem.getAttribute('data-color');
+    var curser = elem.getAttribute('curser-color');
     console.log(color);
     ScrollTrigger.create({
       trigger: headline,
@@ -40,10 +41,19 @@ mm.add("(min-width: 600px)", () => {
         backgroundColor: color,
         duration: 1.4
       }),
+      // onEnter: () => gsap.to('.cursor', {
+      //   backgroundColor: curser,
+      //   duration: 1.4
+      // }),
       onEnterBack: () => gsap.to('body', {
         backgroundColor: color,
         duration: 1.4
       }),
+      // onEnterBack: () => gsap.to('cursor', {
+      //   backgroundColor: curser,
+      //   duration: 1.4
+      // }),
+      
     });
   });
   //create scrolltrigger for each details section
@@ -55,18 +65,15 @@ mm.add("(min-width: 600px)", () => {
     let headline = detail.querySelector("h1")
     let animation = gsap.timeline()
       .to(photos[index], {
-        yPercent: 0
-      }, {
-        duration: 2,
-        ease: "power2.out",
+        yPercent: 0,
       })
       .set(allPhotos[index], {
-        autoAlpha: 0
+        autoAlpha: 0,
       })
     ScrollTrigger.create({
       trigger: headline,
-      start: "top 80%",
-      end: "top 50%",
+      // start: "top 100%",
+      // end: "top ",
       animation: animation,
       scrub: true,
       markers: false,

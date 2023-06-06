@@ -108,48 +108,10 @@ function init() {
      renderer.gammaOutput = true;
      //     document.body.appendChild( renderer.domElement );
      $('#hero').append(renderer.domElement);
-     window.addEventListener('resize', onWindowResize);
 
-     renderer.domElement.addEventListener('pointerdown', onPointerDown);
-     renderer.domElement.addEventListener('pointermove', onPointerMove);
 
 }
 
-function onWindowResize() {
-
-     camera.aspect = window.innerWidth / window.innerHeight;
-     camera.updateProjectionMatrix();
-
-     renderer.setSize(window.innerWidth, window.innerHeight);
-
-}
-
-function onPointerMove() {
-
-     pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
-     pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-     raycaster.setFromCamera(pointer, camera);
-
-     const intersects = raycaster.intersectObjects(scene.children, true);
-
-     // reset colors
-
-}
-
-function onPointerDown() {
-
-     raycaster.setFromCamera(pointer, camera);
-
-     const intersects = raycaster.intersectObjects(scene.children, true);
-
-     if (intersects.length > 0) {
-
-          console.log('Intersection:', intersects[0]);
-
-     }
-
-}
 
 function animate() {
 
