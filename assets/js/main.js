@@ -316,6 +316,7 @@ window.onload = function () {
       delay: 0.9,
     });
   });
+
   function setCurrentSlide(ele, index) {
     $(".swiper1 .swiper-slide").removeClass("selected");
     ele.addClass("selected");
@@ -385,7 +386,13 @@ window.onload = function () {
 };
 
 
-
+$(window).on("load", function () {
+  gsap.to(".logo_animation_loader", {
+    duration: 1,
+    display:"none",
+    delay: 1,
+  });
+});
 
 
 
@@ -464,13 +471,7 @@ const smoother = ScrollSmoother.create({
 /* After Adding New Content to DOM */
 smoother.refresh();
 
-$(window).on("load", function () {
-  gsap.to(".logo_animation_loader", {
-    duration: 1,
-    display:"none",
-    delay: 1,
-  });
-});
+
 
 
 const wrapper = document.querySelector(".wrapper-logo-slider ");
@@ -577,4 +578,17 @@ const menu = document.querySelector('.menu');
 const btn = menu.querySelector('.nav-tgl');
 btn.addEventListener('click', evt => {
 	menu.classList.toggle('active');
+
+  gsap.fromTo(".side_viewer ul li", {
+    opacity: 0,
+    stagger: 0.5,
+    y: 20
+  }, {
+    duration: 0.8,
+    opacity: 1,
+    ease: "power2.out",
+    stagger: 0.1,
+    delay: 0.4,
+    y: 0
+  });
 })

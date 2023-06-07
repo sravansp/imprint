@@ -1,11 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}",
+  content: [
     './home.html',
     "./slider.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'xs': '500px',
+        // => @media (min-width: 500px) { ... }
+      },
+    },
+
   },
   plugins: [],
 }

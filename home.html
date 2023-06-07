@@ -33,31 +33,33 @@
   <main class="main" id="scroll-container">
     <div class="logo_animation_loader">
       <div class="header_logo_loader flex gap-2 justify-center items-center">
-        <img class="w-[30px] logo" src="./assets/images/brand/imprint_black_logo.png" alt="">
+        <!-- <img class="w-[30px] logo" src="./assets/images/brand/imprint_black_logo.png" alt=""> -->
         <!-- <span class="text-black font-bold">
               IMPRINT
             </span> -->
-        <img class="w-[100px]" src="./assets/images/brand/text.png" alt="">
+        <!-- <img class="w-[100px]" src="./assets/images/brand/text.png" alt=""> -->
+        <img class="w-[100px]" src="./assets/images/brand/logo_full_gray.svg" alt="">
       </div>
     </div>
     <header>
       <nav id="navbar"
-        class="navbar visible fixed top-0 left-0 flex items-center justify-between gap-[20px] w-full h-[72px] transition duration-300 pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-32 md:pr-32 z-50 backdrop-filter backdrop-blur-lg bg-opacity-50">
+        class="navbar visible fixed top-0 left-0 flex items-center justify-between gap-[20px] w-full h-[72px] transition duration-300 pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-24 md:pr-24 z-50 backdrop-filter backdrop-blur-lg bg-opacity-50">
         <div class="logo_animation">
-          <div class="header_logo flex gap-2 justify-center items-center">
-            <img class="w-[30px]" src="./assets/images/brand/imprint_black_logo.png" alt="">
+          <div class="header_logo flex gap-2 justify-center items-center ">
+            <!-- <img class="w-[30px] mix-blend-difference" src="./assets/images/brand/imprint_black_logo.png" alt=""> -->
             <!-- <span class="text-black font-bold">
               IMPRINT
             </span> -->
-            <img class="w-[100px]" src="./assets/images/brand/text.png" alt="">
+            <!-- <img class="w-[100px]" src="./assets/images/brand/text.png" alt=""> -->
+            <img class="w-[100px]" src="./assets/images/brand/logo_full_gray.svg" alt="">
           </div>
         </div>
-        <div class="nav_items sm:flex items-center gap-8 text-xs hidden">
-          <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
+        <div class="nav_items sm:flex items-center gap-8 text-md hidden">
+          <a class="nav__links text-gray-500 h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
             href="">About</a>
-          <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
+          <a class="nav__links text-gray-500 h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
             href="">Works</a>
-          <a class="text-black h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
+          <a class="nav__links text-gray-500 h-[72px] grid place-items-center hover:text-[#03b2ec] transition-all duration-200"
             href="">Contact Us</a>
           <a class="button-58 transition duration-300 p-2 w-max rounded-full text-xs px-4 text-white" href="">
             <span class="text-btn">Let's Talk</span><span>Let's Talk</span>
@@ -69,55 +71,82 @@
             <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
           </button>
           <nav class="nav">
-            <!-- I don't care about the menu elements here so I will hide them-->
-            <ul>
-              <li>element one</li>
-              <li>element two</li>
-              <li>element three</li>
-              <li>element four</li>
-            </ul>
+            <div class="side_viewer flex text-white justify-center items-center text-4xl">
+              <ul class="flex flex-col gap-6">
+                <li>About</li>
+                <li>Works</li>
+                <li>Contact Us</li>
+                <li>Lets Talk</li>
+              </ul>
+            </div>
           </nav>
         </div>
       </nav>
     </header>
     <div class="content">
       <!-- SECTION START  -->
-      <section class="section panal section_1 relative overflow-hidden">
-        <div class="pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-32 md:pr-32 min-h-screen h-full bg-white">
-          <div class="lp_title flex flex-col pt-24 gap-4 relative">
-            <span class="lptitle_span text-[#C6C6C6] text-sm">Unleash Your Vision</span>
-            <span
-              class="lptitle_span font-bold text-3xl  xs:text-[40px] sm:text-[50px] md:text-[55px] sm:leading-[50px] md:leading-[55px] lg:text-[80px] lg:leading-[80px] ">Your
-              Ultimate Offset<br>
-              <span class="text-[#0092D1]">Printing</span> Partner</span>
-            <!-- <img src="./assets/images/Christmas-stars.png" alt=""> -->
-          </div>
-          <div class="lp_center pt-8 pb-[30%] flex justify-between items-center">
-            <div class="two_circle flex flex-col w-1/2 sm:flex-row gap-3 sm:gap-8 items-center text-center">
-              <div class="circles flex relative">
-                <div class="circle1 bg-[#006C99] w-14 h-14 rounded-full"></div>
-                <div class="circle2 bg-[#202224] w-14 h-14 rounded-full absolute left-6"></div>
+      <section class="section panal section_1 relative overflow-hidden bg-white white-bg">
+        <div class="min-h-screen h-full">
+          <div class="pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-24 md:pr-24">
+            <div class="lp_title flex flex-col pt-24 gap-4 relative text-center xs:text-left">
+              <span class="lptitle_span text-[#C6C6C6] text-sm lg:text-lg">Unleash Your Vision</span>
+              <span
+                class="lptitle_span font-bold text-5xl  xs:text-[44px] sm:text-[50px] md:text-[55px] sm:leading-[50px] md:leading-[55px] lg:text-[80px] lg:leading-[80px]">
+                <span class="xs:whitespace-pre-line"> <span>Your Ultimate Offset</span>
+                  <span class="text-[#0092D1]">Printing</span> Partner</span>
+              </span>
+              <!-- <img src="./assets/images/Christmas-stars.png" alt=""> -->
+            </div>
+            <div
+              class="lp_center pt-12 pb-[20%] sm:pt-8 sm:pb-[30%] flex justify-center sm:justify-between items-center">
+              <div class="two_circle flex sm:w-1/2 sm:flex-row gap-8 items-center">
+                <div class="circles flex relative">
+                  <div class="circle1 bg-[#006C99] w-14 h-14 rounded-full"></div>
+                  <div class="circle2 bg-[#202224] w-14 h-14 rounded-full absolute left-6"></div>
+                </div>
+                <div class="text-cir flex flex-col text-sm font-[500]">
+                  <span>15,000+</span>
+                  <span>Satisfied client</span>
+                </div>
               </div>
-              <div class="text-cir flex flex-col text-sm font-[500]">
-                <span>15,000+</span>
-                <span>Satisfied client</span>
+              <div class="w-1/2 sm:w-2/5 text-[#5C5858] hidden sm:block">
+                <span>Imprint printing press is the foremost provider of varied offset printing solutions to more than a
+                  thousand clients today..</span>
               </div>
             </div>
-            <div class="w-1/2 sm:w-2/5 text-[#5C5858]">
-              <span>Imprint printing press is the foremost provider of varied offset printing solutions to more than a
-                thousand clients today..</span>
-            </div>
           </div>
-          <div class="bottam_lp_img absolute -bottom-16 left-1/2 -translate-x-1/2 -translate-y-0 w-full pl-32 pr-32">
+          <div
+            class="bottam_lp_img hidden sm:block absolute -bottom-12 md:-bottom-12 left-1/2 -translate-x-1/2 -translate-y-0 w-full pl-5 pr-5 sm:pl-10 sm:pr-10 md:pl-24 md:pr-24">
             <div class="relative">
               <div class="flex overflow-hidden rounded-[45px]">
                 <img class="w-full" src="./assets/images/landing_img.webp" alt="image">
               </div>
               <div
-                class="layer_bottom_lp_img rounded-[45px] backdrop-blur-[31px] absolute -top-[10%] left-[3%] w-[210px] p-7">
+                class="layer_bottom_lp_img rounded-3xl lg:rounded-[20px] backdrop-blur-[31px] absolute -top-[10%] left-[3%] w-[345px] lg:w-[210px] p-4 lg:p-7">
                 <div class="flex flex-col gap-2">
                   <span class="text-sm font-[500] text-black">Imprint Printing</span>
                   <span class="text-sm text-black">Imprint Printing Press is not just any ordinary printing company - we
+                    are
+                    the foremost provider of varied </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottam_lp_img mobile_screen sm:hidden bottom-0 h-[355px] overflow-hidden rounded-t-3xl absolute">
+            <div class="relative">
+              <div class="flex">
+                <img class="w-full h-[355px] object-cover" src="./assets/images/landing_img.png" alt="image">
+              </div>
+              <div
+                class="layer_bottom_lp_img absolute left-[50%] w-[90%] p-4 lg:p-7 top-[15%] -translate-x-[50%] text-center">
+                <span class="text-sm text-white">Imprint Printing Press is not just any ordinary printing company - we
+                  are the foremost provider of varied </span>
+              </div>
+              <div
+                class="layer_bottom_lp_img rounded-2xl bg-[#FFFFFF66] absolute left-[50%] w-[90%] p-4 lg:p-7 bottom-[15%] -translate-x-[50%]">
+                <div class="flex flex-col gap-2">
+                  <span class="text-sm font-[500] text-white">Imprint Printing</span>
+                  <span class="text-sm text-white">Imprint Printing Press is not just any ordinary printing company - we
                     are
                     the foremost provider of varied </span>
                 </div>
@@ -129,16 +158,16 @@
       <!-- SECTION END  -->
 
       <!-- logo slider section START -->
-      <div class="wrapper-logo-slider h-48 w-full flex bg-[#141414] overflow-hidden relative items-center">
-        <img class="img-logo" src="./assets/images/logo_slider/1.png" alt="">
-        <img class="img-logo" src="./assets/images/logo_slider/2.png" alt="">
-        <img class="img-logo" src="./assets/images/logo_slider/3.png" alt="">
-        <img class="img-logo" src="./assets/images/logo_slider/4.png" alt="">
-        <img class="img-logo" src="./assets/images/logo_slider/5.png" alt="">
-        <img class="img-logo" src="./assets/images/logo_slider/6.png" alt="">
-        <img class="img-logo" src="./assets/images/logo_slider/7.png" alt="">
-        <img class="img-logo" src="./assets/images/logo_slider/8.png" alt="">
-        <img class="img-logo" src="./assets/images/logo_slider/9.png" alt="">
+      <div class="wrapper-logo-slider h-24 sm:h-48 w-full flex bg-[#141414] overflow-hidden relative items-center">
+        <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/1.png" alt="">
+        <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/2.png" alt="">
+        <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/3.png" alt="">
+        <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/4.png" alt="">
+        <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/5.png" alt="">
+        <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/6.png" alt="">
+        <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/7.png" alt="">
+        <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/8.png" alt="">
+        <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/9.png" alt="">
       </div>
       <!-- logo slider section END -->
 
@@ -422,7 +451,7 @@
       <!-- SECTION END  -->
 
       <!-- SECTION START  -->
-      <section class="section panal section_4">
+      <section class="section panal section_4 white-bg">
         <div class="pt-60 white-bg">
           <div class="h-full px-3 sm:px-20 lg:px-44">
             <div class="section_header text-left pb-40 text-6xl">
@@ -579,7 +608,8 @@
 
       <!-- SECTION START  -->
       <section class="section panal section_5">
-        <div class="h-screen bg-[#161616] overflow-hidden">
+        <div
+          class="h-screen bg-[#161616] overflow-hidden bg-[url('../assets/images/testimonial-bg.webp')] bg-contain bg-no-repeat bg-center">
           <div class="relative text-white">
             <div
               class="header_title text-[20px] sm:text-[30px] md:text-[50px] font-bold leading-none text-center pt-10">
@@ -730,10 +760,10 @@
                 </div>
               </div>
             </div>
-            <video autoplay loop muted class="absolute z-10">
+            <!-- <video autoplay loop muted class="absolute z-10">
               <source src="./assets/video/testimonials.mp4" />
               Your browser does not support the video tag.
-            </video>
+            </video> -->
           </div>
         </div>
       </section>
@@ -795,7 +825,7 @@
       <!-- FOOTER END  -->
     </div>
   </main>
-  <div class="cursor z-[9999]"></div>
+  <div class="cursor z-[9999] hidden md:block"></div>
   <div class="btntop fixed bottom-[6%] right-[6%] hidden">
     <button id="buttontop" tooltip="Back to Top" flow="left"
       class="p-2 flex items-center justify-center bg-gray-700 text-gray-400 rounded-xl">

@@ -349,7 +349,7 @@
 
 .navbar.visible {
     translate: 0;
-    background: white;
+    /* background: white; */
     transition: all 0.3s;
 }
 
@@ -404,7 +404,6 @@
    */
 
 .img-logo {
-    width: 13%;
     aspect-ratio: 6/2;
     object-fit: contain;
     opacity: 0.4;
@@ -412,11 +411,11 @@
 }
 
 
-.nav ul {
+/* .nav ul {
     display: none;
-  }
-  
-  .nav-tgl {
+} */
+
+.nav-tgl {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -435,8 +434,9 @@
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.24);
     line-height: 0.6;
     text-align: center;
-  }
-  .nav-tgl > span {
+}
+
+.nav-tgl>span {
     display: inline-block;
     position: relative;
     height: 2px;
@@ -444,8 +444,10 @@
     border-radius: 1px;
     background: #293335;
     vertical-align: middle;
-  }
-  .nav-tgl > span:before, .nav-tgl > span:after {
+}
+
+.nav-tgl>span:before,
+.nav-tgl>span:after {
     display: inline-block;
     position: absolute;
     content: "";
@@ -453,30 +455,35 @@
     border-radius: 1px;
     background: #293335;
     transition: all 200ms;
-  }
-  .nav-tgl > span:before {
+}
+
+.nav-tgl>span:before {
     top: -6px;
     left: 0px;
     width: 20px;
-  }
-  .nav-tgl > span:after {
+}
+
+.nav-tgl>span:after {
     top: 6px;
     left: 6px;
     width: 14px;
-  }
-  .nav-tgl:focus {
+}
+
+.nav-tgl:focus {
     outline: none;
-  }
-.nav-tgl:hover > span:before {
+}
+
+.nav-tgl:hover>span:before {
     width: 20px;
     left: 0;
-  }
-  .nav-tgl:hover > span:after{
+}
+
+.nav-tgl:hover>span:after {
     width: 14px;
     left: 6;
-  }
-  
-  .nav:before {
+}
+
+/* .nav:before {
     display: block;
     position: fixed;
     top: 0;
@@ -486,26 +493,48 @@
     height: 100vh;
     background: rgb(0, 0, 0);
     transition: all 500ms ease-in-out;
+    clip-path: circle(20px at calc(100% - 40px) 36px);
+    visibility: hidden;
+}
+
+.menu.active .nav:before {
+    visibility: visible;
+    clip-path: circle(100%);
+} */
+.nav .side_viewer {
+    /* display: block; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    transition: all 500ms ease-in-out;
     /* clip-path: circle(30px at calc(100% - 65px) 65px); */
     clip-path: circle(20px at calc(100% - 40px) 36px);
     visibility: hidden;
-  }
-  
-  .menu.active .nav:before {
+}
+
+.menu.active .nav .side_viewer {
     visibility: visible;
     clip-path: circle(100%);
-  }
-  .menu.active .nav-tgl > span {
+}
+
+.menu.active .nav-tgl>span {
     height: 0;
-  }
-  .menu.active .nav-tgl > span:after, .menu.active .nav-tgl > span:before {
+}
+
+.menu.active .nav-tgl>span:after,
+.menu.active .nav-tgl>span:before {
     top: 0px;
     left: 0;
     width: 20px;
-  }
-  .menu.active .nav-tgl > span:after {
+}
+
+.menu.active .nav-tgl>span:after {
     transform: rotate(-45deg);
-  }
-  .menu.active .nav-tgl > span:before {
+}
+
+.menu.active .nav-tgl>span:before {
     transform: rotate(45deg);
-  }
+}
