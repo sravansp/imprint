@@ -465,7 +465,7 @@ $(window).scroll(function () {
 const smoother = ScrollSmoother.create({
   wrapper: ".main",
   content: ".content",
-  smooth: 3,
+  smooth: 0.5,
 
 });
 /* After Adding New Content to DOM */
