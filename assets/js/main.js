@@ -78,22 +78,22 @@ owl.owlCarousel({
   smartSpeed: 1500,
   autoplayTimeout: 4000,
   autoplayHoverPause: false,
-  responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:false
-        },
-        600:{
-            items:1,
-            nav:false
-        },
-        1000:{
-            items:2,
-            nav:false,
-            loop:true
-        }
+  responsiveClass: true,
+  responsive: {
+    0: {
+      items: 1,
+      nav: false
+    },
+    600: {
+      items: 1,
+      nav: false
+    },
+    1000: {
+      items: 2,
+      nav: false,
+      loop: true
     }
+  }
 });
 // $(".play").on("click", function () {
 //   owl.trigger("play.owl.autoplay", [1000]);
@@ -280,7 +280,7 @@ window.onload = function () {
     duration: 0.8,
     opacity: 1,
     height: "auto",
-    ease:"back.out(1.7)",
+    ease: "back.out(1.7)",
     // repeat: -1,
     yoyo: true,
     delay: 3.8,
@@ -299,7 +299,7 @@ window.onload = function () {
     delay: 4.4,
     x: 0
   });
-  
+
   // create
   let mm = gsap.matchMedia();
 
@@ -310,7 +310,7 @@ window.onload = function () {
       position: "inherit",
       zIndex: 1,
       height: "72px",
-      scale:1,
+      scale: 1,
       width: "auto",
       duration: 0.5,
       delay: 0.9,
@@ -351,7 +351,7 @@ window.onload = function () {
     slidesOffsetBefore: 5, // This is 5px slide offset
     slidesPerView: 1.3,
     autoHeight: true,
-    calculateHeight:true,
+    calculateHeight: true,
     centeredSlides: true,
     mousewheel: {
       releaseOnEdges: true,
@@ -389,7 +389,7 @@ window.onload = function () {
 $(window).on("load", function () {
   gsap.to(".logo_animation_loader", {
     duration: 1,
-    display:"none",
+    display: "none",
     delay: 1,
   });
 });
@@ -408,14 +408,14 @@ function ScrollRevealaAm() {
   });
   sr.reveal(".headline,.header_title", {
     duration: 1000,
-    delay: 100,
+    delay: 50,
     origin: "bottom",
     reset: true,
   });
 
   sr.reveal(".text,.header_desc", {
     duration: 2000,
-    delay: 200,
+    delay: 100,
     origin: "bottom",
     reset: true,
   });
@@ -574,21 +574,57 @@ function horizontalLoop(items, config) {
   return tl;
 }
 
-const menu = document.querySelector('.menu');
-const btn = menu.querySelector('.nav-tgl');
-btn.addEventListener('click', evt => {
-	menu.classList.toggle('active');
 
-  gsap.fromTo(".side_viewer ul li", {
-    opacity: 0,
-    stagger: 0.5,
-    y: 20
-  }, {
-    duration: 0.8,
-    opacity: 1,
-    ease: "power2.out",
-    stagger: 0.1,
-    delay: 0.4,
-    y: 0
+
+
+console.clear();
+var menuAnimation = gsap.timeline({
+  paused: true
+});
+var menuAnimationBack = gsap.timeline({
+  paused: true,
+  reversed: true
+});
+var navMain = document.getElementById("side_viewer");
+var menuButton = document.getElementById("nav-tgl");
+var toggle = true;
+
+gsap.set('.link', {
+  y: 30,
+  opacity:0
+});
+
+menuAnimation
+  .to(navMain, {
+    duration: .8,
+    ease: "power2.inOut",
+  })
+  .to('.link', {
+    duration: .3,
+    autoAlpha: 1,
+    y: 0,
+    stagger: .1,
+    ease: "power4.out"
   });
-})
+
+
+menuAnimationBack
+  .to('.link', {
+    duration: .1,
+    autoAlpha: 0,
+    y: 30,
+    stagger: .1,
+    ease: "power4.out"
+  })
+  .to(navMain, {
+    duration: 0.55,
+    ease: "power4.in",
+  });
+
+
+menuButton.onclick = function () {
+  var menu = document.querySelector('.menu');
+  menu.classList.toggle('active');
+  toggle = !toggle;
+  toggle === false ? menuAnimation.play(0) : menuAnimationBack.play(0);
+};

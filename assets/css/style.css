@@ -392,17 +392,6 @@
     font-size: 20px;
 }
 
-/* .imprint {
-    width: 0;
-    overflow: hidden;
-    opacity: 0;
-} */
-
-/* .wrapper-logo-slider {
-
-  }
-   */
-
 .img-logo {
     aspect-ratio: 6/2;
     object-fit: contain;
@@ -411,9 +400,6 @@
 }
 
 
-/* .nav ul {
-    display: none;
-} */
 
 .nav-tgl {
     display: flex;
@@ -483,35 +469,18 @@
     left: 6;
 }
 
-/* .nav:before {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    content: "";
-    width: 100vw;
-    height: 100vh;
-    background: rgb(0, 0, 0);
-    transition: all 500ms ease-in-out;
-    clip-path: circle(20px at calc(100% - 40px) 36px);
-    visibility: hidden;
-}
-
-.menu.active .nav:before {
-    visibility: visible;
-    clip-path: circle(100%);
-} */
 .nav .side_viewer {
     /* display: block; */
     position: fixed;
     top: 0;
     left: 0;
+    bottom: 0;
     width: 100vw;
     height: 100vh;
     background: rgb(0, 0, 0);
-    transition: all 500ms ease-in-out;
-    /* clip-path: circle(30px at calc(100% - 65px) 65px); */
-    clip-path: circle(20px at calc(100% - 40px) 36px);
+    transition: all 0.55s ease-in-out;
+
+    clip-path: circle(30px at calc(100% - 40px) 36px);
     visibility: hidden;
 }
 

@@ -1,7 +1,3 @@
-// learn what all this code means at
-// https://www.creativecodingclub.com/bundles/creative-coding-club
-// unlock over 200 GSAP lessons today
-
 
 const details = gsap.utils.toArray(".desktopContentSection:not(:first-child)")
 const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)")
@@ -12,6 +8,37 @@ gsap.set(photos, {
 })
 
 const allPhotos = gsap.utils.toArray(".desktopPhoto")
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".mobilePhoto").forEach((container) => {
+  let image = container.querySelector(".mobilePhoto img");
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: "top 120%",
+      toggleActions: "play none none reverse"
+    }
+  });
+
+  tl.set(container, { autoAlpha: 1 });
+  tl.from(container, {
+    duration: 3,
+    yPercent: 100,
+    skewX: 0.1,
+    scale:1,
+    ease: "expo"
+  });
+  tl.from(image, {
+    duration: 3,
+    yPercent: -100,
+    skewX: 0.1,
+    scale:1.5,
+    ease: "expo"
+  }, 0);
+  
+});
 
 
 // create
@@ -89,54 +116,4 @@ mm.add("(min-width: 640px)", () => {
   };
 
 
-
-
-
-
-  // $('.change-color').click(function() {
-  //   $("#id").attr("data-color","#000000"); 
-  //   console.log('change dark-mode');
-  //   ScrollTrigger.refresh()
-  // })
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ScrollTrigger Docs
-
-https://greensock.com/docs/v3/Plugins/ScrollTrigger
-
-*/
-
-
-
-
-
-/* 
-
-learn more GreenSock and ScrollTrigger
-
-https://www.creativeCodingClub.com
-
-new lessons weekly
-less than $1 per week
-
-*/
