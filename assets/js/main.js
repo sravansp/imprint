@@ -305,16 +305,16 @@ window.onload = function () {
 
   // add a media query. When it matches, the associated function will run
   mm.add("(min-width: 768px)", () => {
-    const th = gsap.timeline();
-    th.to(".header_logo_loader", {
-      position: "inherit",
-      zIndex: 1,
-      height: "72px",
-      scale: 1,
-      width: "auto",
-      duration: 0.5,
-      delay: 0.9,
-    });
+  const th = gsap.timeline();
+  th.to(".header_logo_loader", {
+    position: "inherit",
+    zIndex: 1,
+    height: "72px",
+    scale: 1,
+    width: "auto",
+    duration: 0.5,
+    delay: 0.9,
+  });
   });
 
   function setCurrentSlide(ele, index) {
@@ -343,14 +343,14 @@ window.onload = function () {
   });
 
   var swiper2 = new Swiper(".swiper2", {
-    direction: "horizontal",
+    // direction: "horizontal",
     // slidesPerView: 1,
-    spaceBetween: 50,
     freeMode: true,
     loop: false,
-    slidesOffsetBefore: 5,
-    slidesOffsetAfter: 5, 
-    slidesPerView: 1.3,
+    slidesPerView: 1.8,
+    spaceBetween: 40,
+    slidesOffsetAfter: 10,
+    slidesOffsetBefore: 10,
     autoHeight: true,
     calculateHeight: true,
     centeredSlides: true,
@@ -359,24 +359,23 @@ window.onload = function () {
       // when window width is >= 320px
       320: {
         slidesPerView: 1,
-        spaceBetween: 20
+        spaceBetween: 10
       },
       // when window width is >= 480px
       480: {
         slidesPerView: 1,
-        spaceBetween: 30
+        spaceBetween: 10
       },
       // when window width is >= 640px
       640: {
         slidesPerView: 1,
-        spaceBetween: 40
+        spaceBetween: 10,
       },
-      1024: {
-        slidesPerView: 1.8,
-        spaceBetween: 40,
-        slidesOffsetAfter: 10, 
-        slidesOffsetBefore: 10,
-      }
+      // when window width is >= 1024
+      // 1024: {
+      //   slidesPerView: 2,
+      //   spaceBetween: 40,
+      // },
     },
     mousewheel: {
       releaseOnEdges: true,

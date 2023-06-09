@@ -67,7 +67,6 @@ function init() {
           // if (animations && animations.length) {
           mixer = new THREE.AnimationMixer(object);
           let animation = animations[0];
-          console.log(mixer);
           var action = mixer.clipAction(animation);
           // for (let i = 0; i < animations.length; i++) {
           //      let animation = animations[i];
@@ -165,7 +164,6 @@ function createAnimation(mixer, action, clip) {
 
      })
 
-     console.log(proxy);
      scrollingTL.to(proxy, {
           time: clip.duration,
           repeat: false,
