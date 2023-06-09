@@ -348,14 +348,40 @@ window.onload = function () {
     spaceBetween: 50,
     freeMode: true,
     loop: false,
-    slidesOffsetBefore: 5, // This is 5px slide offset
+    slidesOffsetBefore: 5,
+    slidesOffsetAfter: 5, 
     slidesPerView: 1.3,
     autoHeight: true,
     calculateHeight: true,
     centeredSlides: true,
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 1,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 40
+      },
+      1024: {
+        slidesPerView: 1.8,
+        spaceBetween: 40,
+        slidesOffsetAfter: 10, 
+        slidesOffsetBefore: 10,
+      }
+    },
     mousewheel: {
       releaseOnEdges: true,
     },
+
     onSlideChangeEnd: function (swiper) {
       var n = swiper.activeIndex;
       setCurrentSlide($(".swiper1 .swiper-slide").eq(n), n);
@@ -410,14 +436,14 @@ function ScrollRevealaAm() {
     duration: 1000,
     delay: 50,
     origin: "bottom",
-    reset: true,
+    reset: false,
   });
 
   sr.reveal(".text,.header_desc", {
-    duration: 2000,
+    duration: 1000,
     delay: 100,
     origin: "bottom",
-    reset: true,
+    reset: false,
   });
   // sr.reveal(".sub-text", {
   //   duration: 2000,
@@ -591,7 +617,7 @@ var toggle = true;
 
 gsap.set('.link', {
   y: 30,
-  opacity:0
+  opacity: 0
 });
 
 menuAnimation
