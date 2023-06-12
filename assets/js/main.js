@@ -153,48 +153,52 @@ title.addEventListener("mouseleave", () => {
 });
 
 $(document).ready(function () {
-  $(".bg-white, .white-bg").hover(
-    function () {
-      $(".cursor").css("background", "#000");
-    },
-    function () {
-      $(".cursor").css("background", "#fff");
-    }
-  );
-  $("a, .button-57, .button-58, .btntop").hover(
-    function () {
-      $(".cursor").css("display", "none");
-    },
-    function () {
-      $(".cursor").css("display", "block");
-    }
-  );
-  $(".hover_layer-sm").hover(
-    function () {
-      $(".cursor").addClass("highlight_title-sm");
-    },
-    function () {
-      $(".cursor").removeClass("highlight_title-sm");
-    }
-  );
 
-  $(".hover_layer-md").hover(
-    function () {
-      $(".cursor").addClass("highlight_title-md");
-    },
-    function () {
-      $(".cursor").removeClass("highlight_title-md");
-    }
-  );
+  if (window.matchMedia('(min-width: 1024px)').matches) {
+    $(".bg-white, .white-bg").hover(
+      function () {
+        $(".cursor").css("background", "#000");
+      },
+      function () {
+        $(".cursor").css("background", "#fff");
+      }
+    );
+    $("a, .button-57, .button-58, .btntop").hover(
+      function () {
+        $(".cursor").css("display", "none");
+      },
+      function () {
+        $(".cursor").css("display", "block");
+      }
+    );
+    $(".hover_layer-sm").hover(
+      function () {
+        $(".cursor").addClass("highlight_title-sm");
+      },
+      function () {
+        $(".cursor").removeClass("highlight_title-sm");
+      }
+    );
 
-  $(".hover_layer").hover(
-    function () {
-      $(".cursor").addClass("highlight_title");
-    },
-    function () {
-      $(".cursor").removeClass("highlight_title");
-    }
-  );
+    $(".hover_layer-md").hover(
+      function () {
+        $(".cursor").addClass("highlight_title-md");
+      },
+      function () {
+        $(".cursor").removeClass("highlight_title-md");
+      }
+    );
+
+    $(".hover_layer").hover(
+      function () {
+        $(".cursor").addClass("highlight_title");
+      },
+      function () {
+        $(".cursor").removeClass("highlight_title");
+      }
+    );
+  }
+
 });
 
 
@@ -263,11 +267,11 @@ window.onload = function () {
     delay: 3.1,
   });
   gsap.fromTo(".xmas_star img", {
-    opacity:0,
-    rotate:-200,
+    opacity: 0,
+    rotate: -200,
   }, {
-    opacity:1,
-    rotate:0,
+    opacity: 1,
+    rotate: 0,
     immediateRender: true,
     duration: 2,
     delay: 3.1,
