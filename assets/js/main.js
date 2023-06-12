@@ -262,6 +262,16 @@ window.onload = function () {
     duration: 1,
     delay: 3.1,
   });
+  gsap.fromTo(".xmas_star img", {
+    opacity:0,
+    rotate:-200,
+  }, {
+    opacity:1,
+    rotate:0,
+    immediateRender: true,
+    duration: 2,
+    delay: 3.1,
+  });
   gsap.fromTo(".lp_center", {
     opacity: 0,
     stagger: 0.5,
@@ -304,7 +314,7 @@ window.onload = function () {
   let mm = gsap.matchMedia();
 
   // add a media query. When it matches, the associated function will run
-  mm.add("(min-width: 768px)", () => {
+  // mm.add("(min-width: 768px)", () => {
   const th = gsap.timeline();
   th.to(".header_logo_loader", {
     position: "inherit",
@@ -315,7 +325,7 @@ window.onload = function () {
     duration: 0.5,
     delay: 0.9,
   });
-  });
+  // });
 
   function setCurrentSlide(ele, index) {
     $(".swiper1 .swiper-slide").removeClass("selected");

@@ -380,8 +380,6 @@
 
 .header_logo_loader {
     height: 100vh;
-    padding-left: 6rem;
-    padding-right: 6rem;
     /* z-index: 9999; */
     scale: 2.5;
     width: 100%;
