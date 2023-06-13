@@ -469,16 +469,17 @@ function ScrollRevealaAm() {
     delay: 200,
   });
   sr.reveal(".swiper2", {
-    delay: 600,
-    duration: 500,
+    delay: 200,
+    duration: 800,
     origin: "right",
     reset: false,
   });
 
   sr.reveal(".tab_slider", {
     origin: "right",
-    duration: 500,
-    interval: 100,
+    delay: 100,
+    duration: 800,
+    interval: 80,
     reset: false,
   });
 }
