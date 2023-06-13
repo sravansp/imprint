@@ -470,15 +470,16 @@ function ScrollRevealaAm() {
   });
   sr.reveal(".swiper2", {
     delay: 600,
-    duration: 2000,
+    duration: 500,
     origin: "right",
-    reset: true,
+    reset: false,
   });
 
   sr.reveal(".tab_slider", {
     origin: "right",
+    duration: 500,
     interval: 100,
-    reset: true,
+    reset: false,
   });
 }
 $("#buttontop").click(function () {
