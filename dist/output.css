@@ -1374,6 +1374,32 @@ video {
   color: rgb(18 101 215 / var(--tw-text-opacity));
 }
 
+@media (min-width: 374px) {
+  .xss\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 500px) {
+  .xs\:whitespace-pre-line {
+    white-space: pre-line;
+  }
+
+  .xs\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .xs\:text-left {
+    text-align: left;
+  }
+
+  .xs\:text-\[46px\] {
+    font-size: 46px;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:\!m-0 {
     margin: 0px !important;
@@ -1560,8 +1586,16 @@ video {
     margin-top: 0px;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:flex {
     display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:h-screen {
@@ -1643,6 +1677,11 @@ video {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .md\:leading-\[133\%\] {
@@ -1748,6 +1787,11 @@ video {
   .xl\:w-1\/3 {
     width: 33.333333%;
   }
+
+  .xl\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 1536px) {
@@ -1779,46 +1823,10 @@ video {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
-}
 
-@media (min-width: 500px) {
-  .xs\:whitespace-pre-line {
-    white-space: pre-line;
-  }
-
-  .xs\:px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-
-  .xs\:text-left {
-    text-align: left;
-  }
-
-  .xs\:text-\[46px\] {
-    font-size: 46px;
-  }
-}
-
-@media (min-width: 374px) {
-  .xss\:text-5xl {
-    font-size: 3rem;
+  .\32xl\:text-8xl {
+    font-size: 6rem;
     line-height: 1;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .tab\:block {
-    display: block;
-  }
-
-  .tab\:hidden {
-    display: none;
-  }
-
-  .tab\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 }
 
@@ -1830,14 +1838,13 @@ video {
   .portrait\:hidden {
     display: none;
   }
-
-  .portrait\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
 }
 
 @media (orientation: landscape) {
+  .landscape\:block {
+    display: block;
+  }
+
   .landscape\:hidden {
     display: none;
   }

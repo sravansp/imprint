@@ -50,7 +50,7 @@ function init() {
      // loader.setCrossOrigin('anonymous');
 
      // Import our GLTF model (must be hosted on codepen or CDN to load properly in my experience)
-     let scale = 20; //default 16
+     let scale = 23; //default 16
      let url = "assets/modals/cube/cube.glb";
 
      loader.load(url, function (data) {
