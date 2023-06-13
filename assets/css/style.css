@@ -518,3 +518,17 @@
     display: none;
     /* Safari and Chrome */
 }
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+
+    /* .bottam_lp_img_mobile_screen {
+        display: block !important;
+    }
+    .bottam_lp_img_desktop {
+        display: none !important;
+    } */
+}

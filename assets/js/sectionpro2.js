@@ -11,8 +11,8 @@ animate();
 
 function init() {
      // Render size to match the browser
-     width = window.innerWidth;
-     height = window.innerHeight;
+     width = window.innerWidth/2;  //window.innerWidth
+     height = window.innerHeight /2; //window.innerHeight
 
      // Create new scene
      scene = new THREE.Scene();
@@ -50,7 +50,7 @@ function init() {
      // loader.setCrossOrigin('anonymous');
 
      // Import our GLTF model (must be hosted on codepen or CDN to load properly in my experience)
-     let scale = 16;
+     let scale = 20; //default 16
      let url = "assets/modals/cube/cube.glb";
 
      loader.load(url, function (data) {

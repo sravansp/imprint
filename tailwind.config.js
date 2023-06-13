@@ -11,6 +11,8 @@ module.exports = {
         // => @media (min-width: 500px) { ... }
         'xss': '374px',
         // => @media (min-width: 374px) { ... }
+        'tab': {'min': '768px', 'max': '1023px', 'orientation' : 'portrait'},
+      // => @media (min-width: 768px and max-width: 1023px and orientation : portrait) { ... }
       },
     },
 
