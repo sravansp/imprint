@@ -1,6 +1,30 @@
 $(function () {
   ScrollRevealaAm();
 });
+
+
+// to prevent page zoom 
+document.addEventListener("keydown", function (e) {
+  if ((e.keyCode == "61" ||
+            e.keyCode == "107" ||
+            e.keyCode == "173" ||
+            e.keyCode == "109" ||
+            e.keyCode == "187" ||
+            e.keyCode == "189")) {
+       e.preventDefault();
+  }
+});
+document.addEventListener(
+  "wheel",
+  function (e) {
+       e.preventDefault();
+  }, {
+       passive: false
+  }
+);
+
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 // GSAP Animation
