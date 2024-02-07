@@ -48,17 +48,32 @@
             <img class="w-[100px]" src="./assets/images/brand/logo_full_gray.svg" alt="">
           </div>
         </div>
-        <div class="nav_items sm:flex items-center gap-8 text-md hidden">
-          <a class="nav__links text-gray-500 h-[72px] grid place-items-center hover:text-[#1265D7] transition-all duration-200"
-            href="">About</a>
-          <a class="nav__links text-gray-500 h-[72px] grid place-items-center hover:text-[#1265D7] transition-all duration-200"
-            href="">Works</a>
-          <a class="nav__links text-gray-500 h-[72px] grid place-items-center hover:text-[#1265D7] transition-all duration-200"
-            href="">Contact Us</a>
-          <a class="button-58 transition duration-300 p-2 w-max rounded-full text-xs px-4 text-white" href="">
-            <span class="text-btn">Let's Talk</span><span>Let's Talk</span>
-          </a>
-
+        <div class="nav_items menu-bar sm:flex items-center gap-8 text-md hidden">
+          <ul class="nav_items sm:flex items-center gap-8 text-md hidden">
+            <li><a
+                class="nav__links  text-gray-500 h-[72px] grid place-items-center hover:text-[#1265D7] transition-all duration-200"
+                href="">About</a>
+            </li>
+            <li><a
+                class="nav__links text-gray-500 h-[72px] grid place-items-center hover:text-[#1265D7] transition-all duration-200"
+                href="">Works</a>
+              <div class="dropdown-menu">
+                <ul>
+                  <li>Packaging</li>
+                  <li>Imprinting</li>
+                  <li>Production</li>
+                </ul>
+              </div>
+            </li>
+            <li><a
+                class="nav__links text-gray-500 h-[72px] grid place-items-center hover:text-[#1265D7] transition-all duration-200"
+                href="">Contact Us</a>
+              </li>
+            <li><a class="button-58 transition duration-300 p-2 w-max rounded-full text-xs px-4 text-white" href="">
+                <span class="text-btn">Let's Talk</span><span>Let's Talk</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="menu sm:hidden">
           <button class="nav-tgl" id="nav-tgl" type="button" aria-label="toggle menu">
@@ -88,13 +103,12 @@
                 class="lptitle_span font-bold text-4xl xss:text-5xl xs:text-[46px] sm:text-[48px] md:text-[50px] sm:leading-[48px] md:leading-[50px] lg:text-[76px] lg:leading-[76px] 2xl:text-8xl flex gap-8">
                 <span class="xs:whitespace-pre-line"> <span>Your Ultimate Offset</span>
                   <span class="text-[#1265D7]">Printing</span> Partner</span>
-                 <div class="xmas_star w-16 hidden sm:block">
+                <div class="xmas_star w-16 hidden sm:block">
                   <img class="w-full" src="./assets/images/Christmas-stars.png" alt="">
-                 </div>
+                </div>
               </span>
             </div>
-            <div
-              class="lp_center pt-12 pb-[55vh] sm:pt-8 sm:pb-[30%] flex justify-between items-center">
+            <div class="lp_center pt-12 pb-[55vh] sm:pt-8 sm:pb-[30%] flex justify-between items-center">
               <div class="two_circle flex sm:w-1/2 sm:flex-row gap-12 items-center">
                 <div class="circles flex relative">
                   <div class="circle1 bg-[#1265D7] w-14 h-14 rounded-full"></div>
@@ -108,7 +122,7 @@
               </div>
               <div class="xmas_star w-14 block sm:hidden">
                 <img class="w-full" src="./assets/images/Christmas-stars.png" alt="">
-               </div>
+              </div>
               <div class="w-1/2 sm:w-2/5 text-[#5C5858] hidden sm:block 2xl:text-xl">
                 <span>Imprint printing press is the foremost provider of varied offset printing solutions to more than a
                   thousand clients today..</span>
@@ -133,7 +147,8 @@
             </div>
           </div>
           <!-- Mobile Device Hero bottom section -->
-          <div class="bottam_lp_img bottam_lp_img_mobile_screen block md:block portrait:block landscape:hidden sm:hidden bottom-0 h-[50vh] overflow-hidden rounded-t-3xl absolute">
+          <div
+            class="bottam_lp_img bottam_lp_img_mobile_screen block md:block portrait:block landscape:hidden sm:hidden bottom-0 h-[50vh] overflow-hidden rounded-t-3xl absolute">
             <!-- //h-[355px]  -->
             <div class="relative">
               <div class="flex">
@@ -141,14 +156,16 @@
               </div>
               <div
                 class="layer_bottom_lp_img absolute left-[50%] w-[90%] p-4 lg:p-7 top-[15%] -translate-x-[50%] text-center">
-                <span class="text-sm text-white md:text-2xl">Imprint Printing Press is not just any ordinary printing company - we
+                <span class="text-sm text-white md:text-2xl">Imprint Printing Press is not just any ordinary printing
+                  company - we
                   are the foremost provider of varied </span>
               </div>
               <div
                 class="layer_bottom_lp_img rounded-2xl bg-[#FFFFFF66] absolute left-[50%] w-[90%] p-4 lg:p-7 bottom-[15%] -translate-x-[50%]">
                 <div class="flex flex-col gap-2">
                   <span class="text-sm md:text-2xl font-[500] text-white">Imprint Printing</span>
-                  <span class="text-sm md:text-2xl text-white">Imprint Printing Press is not just any ordinary printing company - we
+                  <span class="text-sm md:text-2xl text-white">Imprint Printing Press is not just any ordinary printing
+                    company - we
                     are
                     the foremost provider of varied </span>
                 </div>
@@ -162,30 +179,30 @@
         <div class="marquee">
           <div class="marquee__group">
             <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/1.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/2.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/3.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/4.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/5.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/6.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/7.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/8.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/9.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/2.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/3.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/4.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/5.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/6.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/7.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/8.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/9.png" alt="">
           </div>
-      
+
           <div aria-hidden="true" class="marquee__group">
-          <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/1.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/2.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/3.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/4.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/5.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/6.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/7.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/8.png" alt="">
-              <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/9.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/1.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/2.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/3.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/4.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/5.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/6.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/7.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/8.png" alt="">
+            <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/9.png" alt="">
           </div>
         </div>
-        </article>
-        <!-- <article class="wrapper bg-[#141414]">
+      </article>
+      <!-- <article class="wrapper bg-[#141414]">
           <div class="marquee">
             <div class="marquee__group">
               <img class="img-logo w-[30%] sm:w-[13%]" src="./assets/images/logo_slider/1.png" alt="">
@@ -833,7 +850,8 @@
       <footer class="footer bg-[#2E3537] py-8 sm:py-12 px-12">
         <div class="container mx-auto px-0 xs:px-10 sm:px-8 text-white">
           <div class="sm:flex sm:flex-wrap sm:-mx-4 md:py-4 justify-between">
-            <div class="px-4 sm:w-1/2 md:w-1/3 xl:w-1/3 text-center sm:text-left text-xs md:text-sm lg:text-sm 2xl:text-lg">
+            <div
+              class="px-4 sm:w-1/2 md:w-1/3 xl:w-1/3 text-center sm:text-left text-xs md:text-sm lg:text-sm 2xl:text-lg">
               <!-- <h5 class="text-xl font-bold mb-6">Features</h5> -->
               <div class="footer-logo flex w-28 m-auto sm:m-0">
                 <img src="./assets/images/brand/logo_full.svg" alt="logo">
